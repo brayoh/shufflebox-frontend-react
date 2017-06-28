@@ -1,4 +1,5 @@
 import React from 'react';
+import BrownBag from './shuffleView/BrownBagView/BrownBag';
 
 class HomePage extends React.Component {
   constructor(props){
@@ -8,7 +9,7 @@ class HomePage extends React.Component {
   render(){
     return (
       <div>
-        <p>This is the home page</p>
+        <BrownBag />
       </div>
     );
   }
