@@ -1,0 +1,19 @@
+.avatar {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  display: inline-block;
+  border-radius: 140px;
+  -webkit-border-radius: 140px;
+  -moz-border-radius: 140px;
+  margin-right: 9px;
+}
+
+.user-info {
+  display: inline-grid;
+}
+
+.skipped-brown-bag {
+  vertical-align: middle;
+  background-color: lightgrey;
+}
