@@ -17,3 +17,28 @@
   vertical-align: middle;
   background-color: lightgrey;
 }
+
+.mdl-button {
+  min-width: 200px;
+  margin-left: 50px;
+  color: white;
+  background-color: dodgerblue;
+}
+
+.mdl-button:hover {
+  color: white;
+  background-color: dodgerblue;
+  box-shadow: 3px 3px grey;
+
+}
+
+.material-icons {
+  margin-right: 8px;
+}
+
+.shuffle-brown-bag {
+  padding-top: 1px;
+  padding-left: 25px;
+  background-color: lightgrey;
+  height: 180px;
+}
