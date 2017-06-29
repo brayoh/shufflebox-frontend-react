@@ -49,6 +49,10 @@
 
 }
 
+.settings-button {
+  font-size: 300px;
+}
+
 .material-icons {
   margin-right: 8px;
 }
@@ -58,4 +62,49 @@
   padding-left: 25px;
   background-color: lightgrey;
   height: 180px;
+}
+
+.mdl-grid {
+  width: 100%;
+  background-color: #3f51b5;
+}
+
+.mdl-layout__header {
+  position: absolute;
+  width: 80%;
+  padding-top: 12px;
+  box-shadow: none;
+}
+
+.mdl-layout__tab-bar {
+  height: 55px;
+}
+
+.settings-panel {
+  height: 7%;
+  overflow: hidden;
+  min-height: 7%;
+  max-height: 7%;
+  padding-left: 80%;
+  background-color: #3f51b5; 
+}
+
+.mdl-cell {
+  margin: 0px;
+}
+
+.mdl-button--icon {
+  height: 40px;
+  margin-left: 80%;
+  margin-top: 6%;
+  min-width: 32px;
+  width: 32px;
+  color: white;
+  background-color: #3f51b5;
+}
+
+.mdl-button--icon:hover {
+  box-shadow: none;
+  color: white;
+  background-color: #3f51b5;
 }

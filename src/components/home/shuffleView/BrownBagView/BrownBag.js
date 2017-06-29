@@ -11,9 +11,14 @@ class BrownBag extends React.Component {
   render(){
     return (
       <div className="brownbag-view">
-        <SkippedBrownBag />
-        <ShuffleEvents />
-        <OngoingBrownBag />
+        <div className="left-panel">
+          <SkippedBrownBag />
+          <ShuffleEvents />
+          <OngoingBrownBag />
+        </div>
+        <div className="right-panel">
+          {/* add the on going list and visitors list components here */}
+        </div>
       </div>
     );
   }
