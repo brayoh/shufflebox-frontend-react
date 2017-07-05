@@ -5,6 +5,7 @@ class PreviousBrownBag extends React.Component {
     super(props);
   }
 
+
   render() {
     return (
       <div className="previous-brown-bag">
