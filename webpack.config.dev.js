@@ -1,5 +1,8 @@
 import webpack from 'webpack';
 import path from 'path';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export default {
   debug: true,
@@ -21,7 +24,13 @@ export default {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+        'TOKEN': JSON.stringify(process.env.TOKEN)
+      }
+    })
   ],
   module: {
     loaders: [

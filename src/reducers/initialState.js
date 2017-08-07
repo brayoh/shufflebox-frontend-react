@@ -150,6 +150,9 @@ export default {
       }
     }
   ],
+  ongoing_brownbag_list: [
+
+  ],
   confirm_modal: {
     isShowing: false,
     id: 0,
