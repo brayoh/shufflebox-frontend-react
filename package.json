@@ -16,6 +16,9 @@
   "dependencies": {
     "babel-polyfill": "6.8.0",
     "bootstrap": "3.3.6",
+    "dotenv": "^4.0.0",
+    "es6-promise": "^4.1.1",
+    "isomorphic-fetch": "^2.2.1",
     "jquery": "2.2.3",
     "node-uuid": "^1.4.8",
     "react": "15.0.2",
@@ -24,7 +27,8 @@
     "react-router": "2.4.0",
     "react-router-redux": "4.0.4",
     "redux": "3.5.2",
-    "redux-thunk": "2.0.1",
+    "redux-api-middleware": "^1.0.3",
+    "redux-thunk": "^2.0.1",
     "toastr": "2.1.2"
   },
   "devDependencies": {
