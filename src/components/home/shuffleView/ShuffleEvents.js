@@ -11,7 +11,7 @@ class ShuffleEvents extends React.Component {
         <h6>27 jan - 20 mar</h6>
         <h4>Next brown bag is almost up...</h4>
         <button className="mdl-button mdl-js-button mdl-button--raised">
-          <i className="material-icons">mood</i>SHUFFLE
+          <i className="material-icons">shuffle</i>SHUFFLE
         </button>
       </div>
     );
