@@ -1,8 +1,32 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
+import * as brownbagActions from '../../../../actions/brownbagActions';
 
 class UpcomingBrownBag extends React.Component {
   constructor(props){
     super(props);
+  }
+
+  componentDidMount() {
+    this.props.getNextPresenters();
+  }
+
+  nextPresenters() {
+    let presenter = this.props.presenters;
+    return (
+      <li className="mdl-list__item mdl-list__item--two-line">
+        <span className="mdl-list__item-primary-content">
+          <img
+          className="avatar"
+          src="https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg"
+          alt="user image not found"/>
+          <div className="user-info">
+            <span>{presenter.user.username}</span>
+            <span className="mdl-list__item-sub-title">{presenter.date}</span>
+          </div>
+        </span>
+      </li>
+      );
   }
 
   render(){
@@ -12,23 +36,31 @@ class UpcomingBrownBag extends React.Component {
             <h6>Upcoming Brown Bag</h6>
             <span className="mdl-list__item-sub-title">27 jan</span>
          </div>
-          <ul className="mdl-list">
-          <li className="mdl-list__item mdl-list__item--two-line">
-          <span className="mdl-list__item-primary-content">
-            <img
-            className="avatar"
-            src="https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg"
-            alt="user image not found"/>
-            <div className="user-info">
-              <span>Shuffle Girl</span>
-              <span className="mdl-list__item-sub-title">27 jan</span>
-            </div>
-          </span>
-        </li>
-        </ul>
+           <ul className="mdl-list">
+            {this.nextPresenters()}
+        </ul> 
       </div>
     );
   }
 }
 
-export default UpcomingBrownBag;
+UpcomingBrownBag.propTypes = {
+  presenters: PropTypes.array.isRequired,
+  getNextPresenters: PropTypes.func.isRequired
+};
+
+function mapStateToProps(state, ownProps) {
+  return {
+    presenters: state.nextBrownbagReducer
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    getNextPresenters: (presenter) => {
+      dispatch(brownbagActions.getNextPresenter(presenter));
+    }
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UpcomingBrownBag);

@@ -15,20 +15,23 @@ export function previousCandidatesReducer(state=initialState.previous_brownbag_l
   }
 }
 
-export function skippedCandidatesReducer(state=initialState.skipped_brown_bag, action) {
+export function ongoingCandidatesReducer(state=initialState.ongoing_brownbag_list, action) {
   switch (action.type) {
+    case "RECEIVE_UNPRESENTED_USERS_SUCCESS":
+      return action.user;
+
     default:
       return state;
+
   }
 }
 
-export function ongoingCandidatesReducer(state=initialState.ongoing_brownbag_list, action) {
+export function nextBrownbagReducer(state=initialState.brownbag_next_presenter, action) {
   switch (action.type) {
-    case "SUCCESS":
-      return action.payload;
+    case "BROWNBAG_NEXT_PRESENTER_SUCCESS":
+      return action.presenter;
 
     default:
-      return state;
-
+    return state;
   }
 }

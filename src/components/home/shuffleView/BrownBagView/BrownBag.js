@@ -17,7 +17,6 @@ class BrownBag extends React.Component {
         <div className="left-panel">
           <PreviousBrownBag />
           <UpcomingBrownBag />
-          <SkippedBrownBag />
           <ShuffleEvents />
         </div>
         <div className="right-panel">
