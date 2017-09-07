@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
 import {
-  brownbagReducer, 
-  previousCandidatesReducer, 
-  skippedCandidatesReducer,
+  brownbagReducer,
+  previousCandidatesReducer,
+  nextBrownbagReducer,
   ongoingCandidatesReducer
 } from './brownbagReducer';
 import {
@@ -12,7 +12,7 @@ import {
 const rootReducer = combineReducers({
   brownbagReducer,
   previousCandidatesReducer,
-  skippedCandidatesReducer,
+  nextBrownbagReducer,
   ongoingCandidatesReducer,
   confirmModalReducer
 });

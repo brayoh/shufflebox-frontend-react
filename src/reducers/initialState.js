@@ -1,5 +1,6 @@
 export default {
-  brownbag_next_presenter: {
+  brownbag_next_presenter: [
+    {
     "id": 666,
     "name": "The Beast",
     "date": "Fri Jan 20 2017",
@@ -7,6 +8,14 @@ export default {
     "avatar": "avatarUrl.com",
     "status": "nextInLine"
   },
+  {
+    "id": 333,
+    "name": "Half Man",
+    "date": "Sat Jun 2 2016",
+    "email": "man@email.com",
+    "avatar": "avatarUrl.com",
+    "status": "nextInLine"
+  }],
   previous_brownbag_list: [
     {
       "id": 1,
