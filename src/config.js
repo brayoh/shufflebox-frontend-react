@@ -1,3 +1,3 @@
-const fetchUrl = 'http://localhost:8000';
+const fetchUrl = 'https://shufflebox-api.herokuapp.com';
 
 export default fetchUrl;
