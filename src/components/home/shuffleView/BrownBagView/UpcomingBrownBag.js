@@ -1,5 +1,7 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
+import CircularProgress from 'material-ui/CircularProgress';
+
 import * as brownbagActions from '../../../../actions/brownbagActions';
 
 class UpcomingBrownBag extends React.Component {
@@ -12,21 +14,26 @@ class UpcomingBrownBag extends React.Component {
   }
 
   nextPresenters() {
-    let presenter = this.props.presenters;
+    const { presenters }  = this.props;
+    if (presenters.user) {
+      return (
+        <li className="mdl-list__item mdl-list__item--two-line">
+          <span className="mdl-list__item-primary-content">
+            <img
+            className="avatar"
+            src="https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg"
+            alt="user image not found"/>
+            <div className="user-info">
+              <span>{presenters.user.username}</span>
+              <span className="mdl-list__item-sub-title">{presenters.user.date}</span>
+            </div>
+          </span>
+        </li>
+        );
+    }
     return (
-      <li className="mdl-list__item mdl-list__item--two-line">
-        <span className="mdl-list__item-primary-content">
-          <img
-          className="avatar"
-          src="https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg"
-          alt="user image not found"/>
-          <div className="user-info">
-            <span>{presenter.user.username}</span>
-            <span className="mdl-list__item-sub-title">{presenter.date}</span>
-          </div>
-        </span>
-      </li>
-      );
+      <p>Loading .....</p>
+    );
   }
 
   render(){
@@ -38,14 +45,14 @@ class UpcomingBrownBag extends React.Component {
          </div>
            <ul className="mdl-list">
             {this.nextPresenters()}
-        </ul> 
+        </ul>
       </div>
     );
   }
 }
 
 UpcomingBrownBag.propTypes = {
-  presenters: PropTypes.array.isRequired,
+  presenters: PropTypes.object.isRequired,
   getNextPresenters: PropTypes.func.isRequired
 };
 
