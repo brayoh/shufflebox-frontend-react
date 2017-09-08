@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-fetch';
 import * as actions from './actionTypes';
+import fetchUrl from '../config';
 
 export function requestUnpresentedUsers(user) {
   return {
@@ -21,7 +22,7 @@ export function getUnpresentedUsers(user) {
 
 export function fetchUnpresentedUsers(users) {
   return dispatch => {
-    return fetch('https://shufflebox-api.herokuapp.com/api/brownbags/not_presented/', {
+    return fetch(`${fetchUrl}/api/brownbags/not_presented/`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -29,7 +30,7 @@ export function fetchUnpresentedUsers(users) {
       }
     })
     .then(response => response.json())
-    .then(response => dispatch(receiveUnprensentedUsersSuccess(response)))
+    .then(response => dispatch(receiveUnprensentedUsersSuccess(response)));
   };
 }
 
@@ -37,7 +38,7 @@ export function requestNextPresenters(presenter) {
   return {
     type: actions.BROWNBAG_NEXT_PRESENTER,
     presenter
-  }
+  };
 }
 
 export function receiveNextPresenterSUccess(presenter) {
@@ -53,7 +54,7 @@ export function getNextPresenter(presenter) {
 
 export function fetchNextPresenter(presenter) {
   return dispatch => {
-    return fetch('https://shufflebox-api.herokuapp.com/api/brownbags/next', {
+    return fetch(`${fetchUrl}/api/brownbags/next`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -61,6 +62,6 @@ export function fetchNextPresenter(presenter) {
       }
     })
     .then(response => response.json())
-    .then(response => dispatch(receiveNextPresenterSUccess(response)))
-  }
+    .then(response => dispatch(receiveNextPresenterSUccess(response)));
+  };
 }
