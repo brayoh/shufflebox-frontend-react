@@ -1,5 +1,6 @@
 import React from 'react';
-import fetch from 'isomorphic-fetch'
+import fetch from 'isomorphic-fetch';
+import fetchUrl from '../../../config';
 
 class ShuffleEvents extends React.Component {
   constructor(props){
@@ -8,7 +9,7 @@ class ShuffleEvents extends React.Component {
   }
 
   shuffle() {
-    fetch('https://shufflebox-api.herokuapp.com/api/shuffle/', {
+    fetch(`${fetchUrl}/api/shuffle/`, {
       method: "POST",
       headers: {
         'Authorization': process.env.TOKEN,
@@ -19,7 +20,7 @@ class ShuffleEvents extends React.Component {
     .then(function(response){
       if (response.status !== 201) {
         console.log("Failed to shuffle brownbags: " + response.status);
-        return
+        return;
       }
       // Check the response data
       response.json().then(function(data) {
@@ -27,7 +28,7 @@ class ShuffleEvents extends React.Component {
       });
     })
     .catch(function(error){
-      console.log(error)
+      console.log(error);
     });
     }
 
