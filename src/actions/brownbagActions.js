@@ -34,6 +34,25 @@ export function fetchUnpresentedUsers(users) {
   };
 }
 
+export function confirmBrownBag(brownBagObj){
+  // this function is called when brownbags are done and status is changed to done
+  // the brownBagObj should onky have "date", "status" and "id" fields.
+  return dispatch => {
+    return fetch(`${fetchUrl}/api/brownbags/${brownBagObj.id}`, {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': process.env.TOKEN
+      },
+      credentials: 'include',
+      body: JSON.stringify(brownBagObj)
+    })
+    .then(dispatch({ type: actions.CONFIRM_BROWNBAG_DONE }))
+    .catch(dispatch({ type: actions.BROWNBAG_ACTION_ERROR }));
+  };
+}
+
 export function requestNextPresenters(presenter) {
   return {
     type: actions.BROWNBAG_NEXT_PRESENTER,
@@ -53,6 +72,7 @@ export function getNextPresenter(presenter) {
 }
 
 export function fetchNextPresenter(presenter) {
+  console.log('check_here', `${fetchUrl}/api/brownbags/next`);
   return dispatch => {
     return fetch(`${fetchUrl}/api/brownbags/next`, {
       method: 'GET',
