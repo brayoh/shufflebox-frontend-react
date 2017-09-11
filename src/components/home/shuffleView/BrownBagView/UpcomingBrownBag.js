@@ -7,14 +7,25 @@ import * as brownbagActions from '../../../../actions/brownbagActions';
 class UpcomingBrownBag extends React.Component {
   constructor(props){
     super(props);
+    this.handleConfirmBrownbag = this.handleConfirmBrownbag.bind(this);
+    this.handleCancelBrownbag = this.handleCancelBrownbag.bind(this);
   }
 
   componentDidMount() {
     this.props.getNextPresenters();
   }
 
+  handleConfirmBrownbag(brownBag){
+    console.log('I can confirm', brownBag)
+  }
+
+  handleCancelBrownbag(brownBag){
+    console.log('I can cancel', brownBag)
+  }
+
   nextPresenters() {
     const { presenters }  = this.props;
+    console.log('check', presenters);
     if (presenters.user) {
       return (
         <li className="mdl-list__item mdl-list__item--two-line">
@@ -26,6 +37,18 @@ class UpcomingBrownBag extends React.Component {
             <div className="user-info">
               <span>{presenters.user.username}</span>
               <span className="mdl-list__item-sub-title">{presenters.user.date}</span>
+            </div>
+            <div>
+              <button
+                onClick={this.handleConfirmBrownbag}
+              >
+                Done
+              </button>
+              <button
+                onClick={this.handleCancelBrownbag}
+              >
+                Cancel
+              </button>
             </div>
           </span>
         </li>
