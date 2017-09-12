@@ -1,0 +1,244 @@
+.avatar {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  display: inline-block;
+  border-radius: 160px;
+  -webkit-border-radius: 160px;
+  -moz-border-radius: 160px;
+  margin-right: 9px;
+}
+.left-panel {
+  width: 60%;
+  border-right: thin solid lightgrey;
+}
+
+.right-panel {
+  width: 40%;
+  background-color: whitesmoke;
+}
+
+.visitor-avatar{
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  display: inline-block;
+  border-radius: 170px;
+  -webkit-border-radius: 170px;
+  -moz-border-radius: 170px;
+  margin-right: 9px;
+}
+
+.visitors-brown-bag {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 39.9%;
+  background-color: whitesmoke;
+  padding-top: 0px;
+  padding-bottom: 0px;
+
+}
+.visitors-title {
+
+}
+
+.user-info {
+  display: inline-grid;
+}
+
+.skipped-brown-bag {
+  vertical-align: middle;
+  width: 100%;
+  background-color: whitesmoke;
+  border-top: thin solid lightgrey;
+}
+
+.previous-brown-bag {
+  background-color: #fefefe;
+  width: 100%;
+
+}
+
+.upcoming-title {
+  padding-left: 25px;
+  width: 95.5%;
+  border-top: thin solid lightgrey;
+}
+
+.title {
+  padding-left: 25px;
+}
+
+.upcoming-brown-bag {
+  vertical-align: middle;
+  background-color: white;
+  width: 100%;
+}
+
+.onlist-brown-bag {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 39.9%;
+  background-color: whitesmoke;
+  padding-bottom: 250px;
+}
+
+.onlist-title {
+  text-align: left;
+  padding-left: 1.5em;
+  color: #222325;
+  font-style: black;
+}
+
+.mdl-button {
+  min-width: 200px;
+  margin-left: 50px;
+  color: white;
+  background-color: dodgerblue;
+}
+
+.mdl-button:hover {
+  color: white;
+  background-color: dodgerblue;
+  box-shadow: 3px 3px grey;
+
+}
+
+.settings-button {
+  font-size: 300px;
+}
+
+.material-icons {
+  margin-right: 8px;
+}
+
+.shuffle-brown-bag {
+  vertical-align: middle;
+  background-color: white;
+  width: 100%;
+}
+
+.mdl-grid {
+  width: 100%;
+  padding: 21px;
+  background-color: #3f51b5;
+ height: 80px;
+}
+
+.mdl-layout__header {
+  position: absolute;
+  width: 80%;
+  min-height: 50px;
+  padding-top: -3px;
+  box-shadow: none;
+}
+
+.mdl-layout__tab-bar {
+  height: 55px;
+}
+
+.settings-panel {
+  padding-left: 91%;
+  background-color: #3f51b5;
+}
+
+.mdl-cell {
+  margin: 0px;
+}
+
+.mdl-button--icon {
+  height: 40px;
+  margin-left: 80%;
+  margin-top: 6%;
+  min-width: 32px;
+  width: 32px;
+  color: white;
+  background-color: #3f51b5;
+}
+
+.mdl-button--icon:hover {
+  box-shadow: none;
+  color: white;
+  background-color: #3f51b5;
+}
+.calendar-panel {
+  width: 35%;
+  height: 100%;
+  border-style: groove;
+}
+
+.current-user-panel {
+  display: inline-flex;
+  color: white;
+  background-color: #72bcd4;
+  margin: 0px 0 0 10%;
+  width: 90%;
+  height: 80px;
+}
+
+.user-avatar {
+  width: 25%;
+  height: 100%;
+}
+
+.user-statement {
+  padding-top: 15px;
+  padding-left: 10px;
+  font-size: 10px;
+
+}
+
+.home-panel {
+  display: -webkit-box;
+  position: absolute;
+  width: 100%;
+  height: 900px;
+}
+
+.mdl-layout {
+  padding: 0 0 0 0px;
+  margin: 0 0 0 0px;
+  border-style: groove;
+  width: 100%;
+}
+
+.mdl-layout__container {
+  width: 63%;
+}
+
+.mdl-list__item--two-line .mdl-list__item-primary-content {
+  height: 70px;
+}
+
+.confirm-modal-content {
+    border-style: solid;
+    border-width: thin;
+    border-color: red;
+    border-radius: 6px;
+    height: 30px;
+    padding: 4px 0px 0px 10px;
+    margin: 2px 2px 2px 39px;
+    width: 85%;
+}
+
+.confirm-modal-message {
+    font-family: monospace;
+    font-size: 18px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 5px 18px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    background-color: #4CAF50;
+    border-radius: 4px;
+    color: white;
+    margin-left: 10px;
+}
+.cancel-btn {
+  background-color: red;
+}
