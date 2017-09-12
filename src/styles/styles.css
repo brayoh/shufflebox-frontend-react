@@ -124,6 +124,7 @@
   width: 100%;
   padding: 21px;
   background-color: #3f51b5;
+ height: 80px;
 }
 
 .mdl-layout__header {
@@ -240,4 +241,4 @@
 }
 .cancel-btn {
   background-color: red;
-} 
+}
