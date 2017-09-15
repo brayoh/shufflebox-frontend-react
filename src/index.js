@@ -6,7 +6,6 @@ import routes from './routes';
 import './styles/styles.css';
 import './styles/main.scss';
 
-// Import Provider from redux and configure store
 import {Provider} from 'react-redux';
 import configureStore from './store/configureStore';
 
