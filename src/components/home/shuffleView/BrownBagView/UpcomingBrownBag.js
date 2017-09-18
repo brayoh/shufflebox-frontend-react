@@ -9,22 +9,20 @@ import * as brownbagActions from '../../../../actions/brownbagActions';
 class UpcomingBrownBag extends React.Component {
   constructor(props){
     super(props);
-    this.handleConfirmBrownbag = this.handleConfirmBrownbag.bind(this);
-    this.handleCancelBrownbag = this.handleCancelBrownbag.bind(this);
   }
 
   componentDidMount() {
     this.props.getNextPresenters();
   }
 
-  handleConfirmBrownbag(brownBag) {
-    brownBag.status = 'done'
+  handleConfirmBrownbag = (brownBag) => {
+    brownBag.status = 'done';
     this.props.confirmBrownBag(brownBag);
     this.props.getNextPresenters();
   }
 
-  handleCancelBrownbag(brownBag){
-    brownBag.status = 'not_done'
+  handleCancelBrownbag = (brownBag) => {
+    brownBag.status = 'not_done';
     this.props.cancelBrownBag(brownBag);
   }
 
@@ -46,10 +44,10 @@ class UpcomingBrownBag extends React.Component {
               </div>
               <div>
                 <FlatButton label="Confirm" primary
-                  onClick={() => this.handleConfirmBrownbag(brownBag)}
+                  onClick={this.handleConfirmBrownbag(brownBag)}
                 />
               <FlatButton label="Cancel" secondary
-                  onClick={() => this.handleCancelBrownbag(brownBag)}
+                  onClick={this.handleCancelBrownbag(brownBag)}
                 />
               </div>
             </span>

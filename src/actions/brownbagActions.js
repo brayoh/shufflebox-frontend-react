@@ -90,7 +90,6 @@ export function getNextPresenter(presenter) {
 }
 
 export function fetchNextPresenter(presenter) {
-  console.log('check_here', `${fetchUrl}/api/brownbags/next`);
   return dispatch => {
     return fetch(`${fetchUrl}/api/brownbags/next`, {
       method: 'GET',

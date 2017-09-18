@@ -7,15 +7,12 @@ import ConfirmModal from '../../../common/ConfirmModal';
 class PreviousBrownBag extends React.Component {
   constructor(props) {
     super(props);
-
-    this.handleClick = this.handleClick.bind(this);
     this.handleModalCancel = this.handleModalCancel.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
     this.listPreviousCandidates = this.listPreviousCandidates.bind(this);
   }
   
- 
-  handleClick(user) {
+  handleClick = (user) => {
     this.props.showModal("Remove user ", user.id);
   }
 
@@ -46,7 +43,7 @@ class PreviousBrownBag extends React.Component {
             id="list-checkbox-1" 
             className="mdl-checkbox__input" 
             checked
-            onClick={() => this.handleClick(candidate)} />
+            onClick={this.handleClick(candidate)} />
           </label>
         </span>
       </li>
