@@ -17,7 +17,7 @@ class OngoingBrownBag extends React.Component {
 
   unpresentedUsers() {
     return (
-      this.props.users.map((user, index) => 
+      this.props.users.map((user, index) =>
       <li key = {index} className="mdl-list__item mdl-list__item--two-line">
         <span className="mdl-list__item-primary-content">
           <img

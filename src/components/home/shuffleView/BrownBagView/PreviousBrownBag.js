@@ -14,8 +14,8 @@ class PreviousBrownBag extends React.Component {
     this.handleConfirm = this.handleConfirm.bind(this);
     this.listPreviousCandidates = this.listPreviousCandidates.bind(this);
   }
-  
- 
+
+
   handleClick(user) {
     this.props.showModal("Remove user ", user.id);
   }
@@ -27,9 +27,9 @@ class PreviousBrownBag extends React.Component {
   handleModalCancel() {
     this.props.hideModal();
   }
- 
+
   listPreviousCandidates(candidates) {
-    const listPreviousCandidates = candidates.map((candidate) => 
+    const listPreviousCandidates = candidates.map((candidate) =>
       <li key={UUID.v4()} className="mdl-list__item">
         <span className="mdl-list__item-primary-content">
         <img
@@ -88,7 +88,7 @@ function mapStateToProps(state, ownProps) {
 function mapDispatchToProps(dispatch, ownProps) {
   return {
     showModal: (message, brownbagID) => {
-      dispatch(actions.showModal(message, brownbagID));  
+      dispatch(actions.showModal(message, brownbagID));
     },
     hideModal: () => {
       dispatch(actions.hideModal());
