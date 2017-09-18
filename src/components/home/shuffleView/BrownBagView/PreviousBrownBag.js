@@ -39,20 +39,20 @@ class PreviousBrownBag extends React.Component {
           <span>{candidate.user.username}</span>
         </span>
         <span className="mdl-list__item-secondary-action">
-          <label 
-          className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" 
+          <label
+          className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
           htmlFor="list-checkbox-1">
-            <input 
-            type="checkbox" 
-            id="list-checkbox-1" 
-            className="mdl-checkbox__input" 
-            checked
+            <input
+            type="checkbox"
+            id="list-checkbox-1"
+            className="mdl-checkbox__input"
+            defaultChecked
             onClick={() => this.handleClick(candidate)} />
           </label>
         </span>
       </li>
     );
-    return listPreviousCandidates;   
+    return listPreviousCandidates;
   }
 
   render() {

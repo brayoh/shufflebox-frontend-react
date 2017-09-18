@@ -27,8 +27,9 @@ class Content extends React.Component {
               window.location.href = `${window.location.href}${'home'}`;
 
             }}
-            style={{ width: "180px", borderRadius: "20px" }}
-            buttonStyle={{
+            style={{
+              width: "180px",
+              borderRadius: "20px",
               borderRadius: "20px",
               backgroundColor:"#33accc"
             }}
