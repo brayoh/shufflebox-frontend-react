@@ -1,5 +1,17 @@
 # shufflebox-frontend-react
 
+What is ShuffleBox You ask? ShuffleBox is an app for Andelans by Andelans to allow you to automate the task of selecting Andelans for hangouts, brown bag and secret santa.
+
+# Quick reference on the same
+* Hangouts: This is where different Andelans are randomly selected to hangout and get to know one another and share in different activities
+
+* Secret Santa: This is where a group of Andelans are randomly assigned a person to whom they give a gift during End Of Year Party. The identity of the gift giver is a secret not to be revealed.
+
+* Brown Bag: This is where an Andelan is selected randomly to share more about themselves over lunch hence the name brownbag
+
+GET STARTED
+
+
 ## Running the App
 
 * clone the repo by running:
