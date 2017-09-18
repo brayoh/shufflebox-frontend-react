@@ -19,16 +19,15 @@ class ShuffleEvents extends React.Component {
     })
     .then(function(response){
       if (response.status !== 201) {
-        console.log("Failed to shuffle brownbags: " + response.status);
-        return;
+        throw `Failed to shuffle brownbags: ${response.status}`;
       }
       // Check the response data
       response.json().then(function(data) {
-        console.log(data);
+        return data;
       });
     })
     .catch(function(error){
-      console.log(error);
+      throw error;
     });
     }
 
