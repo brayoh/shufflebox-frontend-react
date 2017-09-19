@@ -1,7 +1,7 @@
 {
-  "name": "shuffle-box-react",
+  "name": "shufflebox",
   "version": "1.0.0",
-  "description": "Shuffle Andela members to perform various events.",
+  "description": "Shufflebox is an application that provides random selections and groupings for social events at Andela Kenya",
   "author": "AndelaOSP",
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
