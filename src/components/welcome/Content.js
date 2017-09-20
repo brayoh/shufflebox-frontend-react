@@ -1,5 +1,8 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import {Link} from 'react-router';
+
+const styles = require('./Content.scss')
 
 class Content extends React.Component {
   constructor(props){
@@ -12,32 +15,18 @@ class Content extends React.Component {
 
   render(){
     return (
-      <div className= "content">
-        <div className="intro column is-one-third is-paddingless">
-          <img src="https://www.dropbox.com/s/okgmtdpih1xxau3/Shuffle.png?raw=1" width="500px"/>
-          <div className="intro text">
-          <span>
-            <h1>Goodbye paper<br/>
-            Hello Shufflebox</h1>
-            <p className="sub-intro">
-              With our new app you will be able to automate the task of selecting Andelans for hangouts,
-              brown bag and secret santa.
-            </p>
-            <button className="btn-rounded" onClick={this.goToHomePage}
-            style={{ width: "180px", borderRadius: "20px" }}
-            buttonStyle={{
-              borderRadius: "20px",
-              backgroundColor:"#33accc"
-            }}
-            >
-              <strong> GET STARTED </strong>
-            </button>
-          </span>
-          </div>
+      <div className={styles.contentContainer}>
+        <div className={styles.intro}>
+        <h1>Goodbye paper<br/>Hello Shufflebox</h1>
+        <p>
+          With our new app you will be able to automate the task of selecting Andelans for hangouts,
+          brown bag and secret santa.
+        </p>
+        <Button className={styles.button}>GET STARTED</Button>
         </div>
-        <div className="illustration column is-two-thirds is-paddingless">
-          <img src="https://www.dropbox.com/s/l6wx0xixdfeilso/final.png?raw=1" className="image is-16*9"/>
-        </div>
+        <div className={styles.illustration}>
+        <img src="https://www.dropbox.com/s/l6wx0xixdfeilso/final.png?raw=1"/>
+        </div>      
       </div>
     );
   }

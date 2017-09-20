@@ -1,7 +1,29 @@
-.containers {
-  margin: 1rem 1rem 0;
+@import '../../styles/base/_variables.scss';
+
+.navBar {
+  background: $light-gray;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  height: 10vh;
+
+  border-color: #fff;    
+  >div {
+    margin-left: 1rem;
+  }
+  .rightItems {
+    >li > a {
+      color: darken($dark-gray, 50%);
+    }
+  }
 }
 
-.homeNav {
-  width: 100%;
+.brand {
+  >img {
+    display: inline-block;
+    width: 10%;
+  }
+  >span {
+    color: darken($dark-gray, 50%);
+  }
 }

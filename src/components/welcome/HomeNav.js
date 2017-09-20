@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 import { Navbar, Nav, NavItem, Tabs } from 'react-bootstrap';
 
 const styles = require('./HomeNav.scss');
-console.log('hehe', styles);
 
 class HomeNav extends React.Component {
   constructor(props){
@@ -13,35 +12,21 @@ class HomeNav extends React.Component {
   render(){
     return (
       <div className={styles.homeNav}>
-        <Navbar>
+        <Navbar className={styles.navBar}>
           <Navbar.Header>
-            <Navbar.Brand>
-              <a href="/home"><img src="https://www.dropbox.com/s/okgmtdpih1xxau3/Shuffle.png?raw=1" className="image is-48x48"/></a>
+            <Navbar.Brand className={styles.brand}>
+              <a href="/home">
+              <img src="https://www.dropbox.com/s/okgmtdpih1xxau3/Shuffle.png?raw=1"/>
+              <span>SHUFFLEBOX</span>
+              </a>
             </Navbar.Brand>
           </Navbar.Header>
-          <Nav>
-            <NavItem href="/">SHUFFLEBOX</NavItem>
+          <Nav pullRight className={styles.rightItems}>
             <NavItem href="/about">ABOUT</NavItem>
             <NavItem href="/faq">FAQ</NavItem>
           </Nav>
         </Navbar>
       </div>
-      // <div className= "nav-bar">
-      //   <img src="https://www.dropbox.com/s/okgmtdpih1xxau3/Shuffle.png?raw=1" className="image is-48x48"/>
-      //   <div className="column is-half">
-      //     <a href="/"> SHUFFLEBOX </a>
-      //   </div>
-      //     <nav>
-      //       <ul>
-      //         <li>
-      //           <a href="/about"> ABOUT </a>
-      //         </li>
-      //         <li>
-      //           <a href="/faq"> FAQ </a>
-      //         </li>
-      //       </ul>
-      //     </nav>
-      // </div>
     );
   }
 }
