@@ -6,8 +6,8 @@ class Content extends React.Component {
     super(props);
   }
 
-  goToHomePage(){
-    let current_url = window.location.href;
+  goToHomePage = () => {
+    window.location.href = `${window.location.href}${'home'}`;
   }
 
   render(){
@@ -23,13 +23,9 @@ class Content extends React.Component {
               With our new app you will be able to automate the task of selecting Andelans for hangouts,
               brown bag and secret santa.
             </p>
-            <button className="btn-rounded" onClick={()=>{
-              window.location.href = `${window.location.href}${'home'}`;
-
-            }}
-            style={{
-              width: "180px",
-              borderRadius: "20px",
+            <button className="btn-rounded" onClick={this.goToHomePage}
+            style={{ width: "180px", borderRadius: "20px" }}
+            buttonStyle={{
               borderRadius: "20px",
               backgroundColor:"#33accc"
             }}

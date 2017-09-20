@@ -8,15 +8,12 @@ import ConfirmModal from '../../../common/ConfirmModal';
 class PreviousBrownBag extends React.Component {
   constructor(props) {
     super(props);
-
-    this.handleClick = this.handleClick.bind(this);
     this.handleModalCancel = this.handleModalCancel.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
     this.listPreviousCandidates = this.listPreviousCandidates.bind(this);
   }
-
-
-  handleClick(user) {
+  
+  handleClick = (user) => {
     this.props.showModal("Remove user ", user.id);
   }
 
@@ -42,12 +39,12 @@ class PreviousBrownBag extends React.Component {
           <label
           className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
           htmlFor="list-checkbox-1">
-            <input
-            type="checkbox"
-            id="list-checkbox-1"
-            className="mdl-checkbox__input"
-            defaultChecked
-            onClick={() => this.handleClick(candidate)} />
+            <input 
+            type="checkbox" 
+            id="list-checkbox-1" 
+            className="mdl-checkbox__input" 
+            checked
+            onClick={this.handleClick(candidate)} />
           </label>
         </span>
       </li>
