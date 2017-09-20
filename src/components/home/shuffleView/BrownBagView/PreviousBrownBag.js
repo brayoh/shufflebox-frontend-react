@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from "prop-types";
 import {connect} from 'react-redux';
 import UUID from 'node-uuid';
 import * as actions from '../../../../actions/confirmModalActions';
@@ -13,8 +14,8 @@ class PreviousBrownBag extends React.Component {
     this.handleConfirm = this.handleConfirm.bind(this);
     this.listPreviousCandidates = this.listPreviousCandidates.bind(this);
   }
-  
- 
+
+
   handleClick(user) {
     this.props.showModal("Remove user ", user.id);
   }
@@ -26,9 +27,9 @@ class PreviousBrownBag extends React.Component {
   handleModalCancel() {
     this.props.hideModal();
   }
- 
+
   listPreviousCandidates(candidates) {
-    const listPreviousCandidates = candidates.map((candidate) => 
+    const listPreviousCandidates = candidates.map((candidate) =>
       <li key={UUID.v4()} className="mdl-list__item">
         <span className="mdl-list__item-primary-content">
         <img
@@ -38,20 +39,20 @@ class PreviousBrownBag extends React.Component {
           <span>{candidate.user.username}</span>
         </span>
         <span className="mdl-list__item-secondary-action">
-          <label 
-          className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" 
+          <label
+          className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
           htmlFor="list-checkbox-1">
-            <input 
-            type="checkbox" 
-            id="list-checkbox-1" 
-            className="mdl-checkbox__input" 
-            checked
+            <input
+            type="checkbox"
+            id="list-checkbox-1"
+            className="mdl-checkbox__input"
+            defaultChecked
             onClick={() => this.handleClick(candidate)} />
           </label>
         </span>
       </li>
     );
-    return listPreviousCandidates;   
+    return listPreviousCandidates;
   }
 
   render() {
@@ -87,7 +88,7 @@ function mapStateToProps(state, ownProps) {
 function mapDispatchToProps(dispatch, ownProps) {
   return {
     showModal: (message, brownbagID) => {
-      dispatch(actions.showModal(message, brownbagID));  
+      dispatch(actions.showModal(message, brownbagID));
     },
     hideModal: () => {
       dispatch(actions.hideModal());

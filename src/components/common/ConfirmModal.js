@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from "prop-types";
 import {connect} from 'react-redux';
 
 class ConfirmModal extends React.Component {
@@ -13,15 +14,15 @@ class ConfirmModal extends React.Component {
       {this.props.confirmModal.isShowing &&
         <div>
           <div className="confirm-modal-content">
-            <span 
+            <span
             className="confirm-modal-message">
-              {this.props.confirmModal.message} {this.props.confirmModal.id}? 
+              {this.props.confirmModal.message} {this.props.confirmModal.id}?
             </span>
             <button className="btn" onClick={this.props.onConfirm}>OK</button>
             <button className="btn cancel-btn" onClick={this.props.onCancel}>Cancel</button>
           </div>
         </div>
-       }    
+       }
       </div>
     );
   }

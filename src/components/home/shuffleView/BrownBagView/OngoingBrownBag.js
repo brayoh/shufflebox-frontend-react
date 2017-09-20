@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from "prop-types";
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as brownbagActions from '../../../../actions/brownbagActions';
@@ -16,7 +17,7 @@ class OngoingBrownBag extends React.Component {
 
   unpresentedUsers() {
     return (
-      this.props.users.map((user, index) => 
+      this.props.users.map((user, index) =>
       <li key = {index} className="mdl-list__item mdl-list__item--two-line">
         <span className="mdl-list__item-primary-content">
           <img
