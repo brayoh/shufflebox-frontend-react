@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from "prop-types";
 import {connect} from 'react-redux';
 import CircularProgress from 'material-ui/CircularProgress';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -36,10 +37,10 @@ class UpcomingBrownBag extends React.Component {
             <span className="mdl-list__item-primary-content">
               <img
               className="avatar"
-              src="https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg"
+              src={presenters.user.profile.avatar}
               alt="user image not found"/>
               <div className="user-info">
-                <span>{presenters.user.username}</span>
+                <span>{`${presenters.user.first_name} ${presenters.user.last_name}`}</span>
                 <span className="mdl-list__item-sub-title">{presenters.user.date}</span>
               </div>
               <div>

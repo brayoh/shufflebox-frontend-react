@@ -91,7 +91,7 @@ export function getNextPresenter(presenter) {
 
 export function fetchNextPresenter(presenter) {
   return dispatch => {
-    return fetch(`${fetchUrl}/api/brownbags/next`, {
+    return fetch(`${fetchUrl}/api/brownbags/next/`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

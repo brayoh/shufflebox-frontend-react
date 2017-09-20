@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from "prop-types";
 import BrownBag from './shuffleView/BrownBagView/BrownBag';
 import Calendar from './calendarView/Calendar';
 
@@ -10,7 +11,7 @@ class HomePage extends React.Component {
   }
 
   render(){
-    return ( 
+    return (
       <div className="home-panel">
         <Calendar />
         <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header ">
@@ -38,7 +39,7 @@ class HomePage extends React.Component {
             </ul>
             </div>
           </div>
-          
+
           <main className="mdl-layout__content">
             <section className="mdl-layout__tab-panel is-active" id="scroll-tab-1">
               <div className="page-content">
