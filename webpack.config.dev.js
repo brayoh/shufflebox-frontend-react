@@ -3,11 +3,12 @@ import path from 'path';
 import dotenv from 'dotenv';
 
 dotenv.config();
+// process.traceDeprecation = true;
 
 export default {
-  debug: true,
+  // debug: true,
   devtool: "inline-source-map",
-  noInfo: false,
+  // noInfo: false,
   entry: [
     "eventsource-polyfill", // necessary for hot reloading with IE
     "webpack-hot-middleware/client?reload=true", //note that it reloads the page if hot module reloading fails.
@@ -24,7 +25,7 @@ export default {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
@@ -34,29 +35,65 @@ export default {
   ],
   module: {
     rules: [{
-            test: /\.scss$/,
-            use: [{
-                loader: "style-loader" // creates style nodes from JS strings
-            }, {
-                loader: "css-loader" // translates CSS into CommonJS
-            }, {
-                loader: "sass-loader" // compiles Sass to CSS
-            }]
-        }],
-    loaders: [
+        test: /\.js$/,
+        use: ['babel-loader'],
+        exclude: /node_modules/
+      },
       {
+        test: /\.css/,
+        use: [{
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader"
+          }
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [{
+            loader: "style-loader" // creates style nodes from JS strings
+          },
+          {
+            loader: "css-loader", // translates CSS into CommonJS
+            options: {
+              modules: true,
+              importLoaders: 2,
+              sourceMap: true,
+              localIdentName: '[name]__[local]___[hash:base64:5]'
+            }
+          },
+          {
+            loader: "sass-loader", // compiles Sass to CSS
+            options: {
+              outputStyle: 'expanded',
+              sourceMap: true
+            }
+          }
+        ]
+      }
+    ],
+    loaders: [{
         test: /\.js$/,
         include: path.join(__dirname, "src"),
         loaders: ["babel"]
       },
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loaders: ["eslint-loader"]
+        test: /(\.css)$/,
+        loaders: ["style", "css"]
       },
-      { test: /(\.css)$/, loaders: ["style", "css"] },
-      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
-      { test: /\.(woff|woff2)$/, loader: "url?prefix=font/&limit=5000" },
+      {
+        test: /(\.scss)$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        loader: "file"
+      },
+      {
+        test: /\.(woff|woff2)$/,
+        loader: "url?prefix=font/&limit=5000"
+      },
       {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
         loader: "url?limit=10000&mimetype=application/octet-stream"
@@ -69,7 +106,6 @@ export default {
         test: /\.(png|jpg|)$/,
         loader: "url-loader?limit=200000"
       },
-      {test: /(\.scss)$/, loaders: ['style-loader', 'css-loader', 'sass-loader']},
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loader: "image-webpack-loader",
