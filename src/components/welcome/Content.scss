@@ -36,4 +36,8 @@
 
 .button {
   background-color: $blue;
+  &:active,
+  &:focus {
+    outline: none;
+  }
 }

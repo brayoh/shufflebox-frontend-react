@@ -1,0 +1,21 @@
+@import '../../../styles/base/_variables.scss';
+
+// .sideNav {
+//   background: $main-blue;
+//   width: 30%;
+// }
+
+.userAvatar{
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.user {
+  height: 13.7vh;
+  background-color: $light-blue;
+  margin-left: 7rem;
+  >span {
+    margin-left: 1rem;
+    color: $light-gray;
+  }
+}

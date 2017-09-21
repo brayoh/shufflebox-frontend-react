@@ -1,6 +1,8 @@
 import React from 'react';
 import CurrentUser from './CurrentUser';
 
+const styles = require('./Calendar.scss');
+
 class Calendar extends React.Component {
   constructor(props){
     super(props);
@@ -8,7 +10,7 @@ class Calendar extends React.Component {
 
   render(){
     return (
-        <div className="calendar-panel">
+        <div className={styles.calendarPanel}>
           <CurrentUser />
         </div>
     );
