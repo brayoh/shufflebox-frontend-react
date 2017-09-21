@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import {Link} from 'react-router';
+import { Link } from 'react-router-dom';
 
 const styles = require('./Content.scss')
 
@@ -22,7 +22,10 @@ class Content extends React.Component {
           With our new app you will be able to automate the task of selecting Andelans for hangouts,
           brown bag and secret santa.
         </p>
-        <Button className={styles.button}>GET STARTED</Button>
+        <Button className={styles.button}
+          onClick={this.goToHomePage}>
+          GET STARTED
+        </Button>
         </div>
         <div className={styles.illustration}>
         <img src="https://www.dropbox.com/s/l6wx0xixdfeilso/final.png?raw=1"/>
