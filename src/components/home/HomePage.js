@@ -2,8 +2,11 @@ import React from 'react';
 import PropTypes from "prop-types";
 import BrownBag from './shuffleView/BrownBagView/BrownBag';
 import Calendar from './calendarView/Calendar';
+import ShuffleView from './shuffleView/ShuffleView';
 
 import {connect} from 'react-redux';
+
+const styles = require('./HomePage.scss');
 
 class HomePage extends React.Component {
   constructor(props){
@@ -12,9 +15,10 @@ class HomePage extends React.Component {
 
   render(){
     return (
-      <div className="home-panel">
+      <div className={styles.homePageContainer}>
         <Calendar />
-        <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header ">
+        <ShuffleView />
+        {/* <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header ">
           <div className="mdl-grid">
             <div className="mdl-cell mdl-cell--10-col">
               <header className="mdl-layout__header">
@@ -49,18 +53,18 @@ class HomePage extends React.Component {
             <section className="mdl-layout__tab-panel" id="scroll-tab-2">
               <div className="page-content">
                 <p>Coming soon...</p>
-                {/* add the component for secret santa here*/}
-              </div>
-            </section>
+                add the component for secret santa here
+              {/* </div>
+            // </section>
             <section className="mdl-layout__tab-panel" id="scroll-tab-3">
               <div className="page-content">
                 <p>Coming later...</p>
-                {/* add the component for hangouts here*/}
-              </div>
-            </section>
-          </main>
-         </div>
-      </div>
+                add the component for hangouts here*/}
+              {/* </div>
+            {/* </section>
+           {/* </main> 
+          {/* </div> */}
+      </div> 
     );
   }
 }
