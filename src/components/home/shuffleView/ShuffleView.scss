@@ -1,0 +1,17 @@
+@import '../../../styles/base/_variables.scss';
+
+.shuffleContainer {
+  width: 100%;
+}
+
+.shuffle {
+  background: #efeeec;
+  // background: blueviolet;
+  height: 86.3vh;
+  display: flex;
+}
+
+.brownBag {
+  width: 50vw;
+  background: #fff;
+}
