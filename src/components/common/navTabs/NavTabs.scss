@@ -1,0 +1,30 @@
+@import '../../../styles/base/_variables.scss';
+
+.tabs {
+  height: 13.7vh;
+  background: #efeeec;
+
+  >li {
+    margin: 7.4vh 2vw 0;
+
+    a, a:focus {
+      color: $dark-gray;
+      border: 0;
+      background: #efeeec;
+      font-size: 2vh;
+    }   
+  }
+
+  li.active {
+    a:focus, a:hover  {
+      background-color: #fff;
+      color: #777883;
+      border-top: 0;
+      border-right: 0;
+      border-left: 0;
+      border-bottom: 2px solid $blue;
+      width: 100%;
+      box-shadow: 1rem, 0 1rem $blue
+    }
+  }
+}
