@@ -1,5 +1,7 @@
 import React from 'react';
 
+const styles = require('./VisitorBrownBag.scss');
+
 class VisitorBrownBag extends React.Component {
   constructor(props) {
     super(props);
@@ -7,34 +9,26 @@ class VisitorBrownBag extends React.Component {
 
   render() {
     return (
-      <div className="visitors-brown-bag">
-        <div className="visitors-title">
-          <span>VISITING</span>
-        </div>
-        <ul className="mdl-list">
-          <li className="mdl-list__item mdl-list__item--two-line">
-            <span className="mdl-list__item-primary-content">
-              <img
-              className="visitor-avatar"
-              src="https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg"
-              alt="user image not found"/>
-              <div className="user-info">
-                <span>John Doe</span>
-                <span>Director Technology</span>
-              </div>
-            </span>
+      <div className={styles.vistorsBrownBag}>
+        <span>VISITING</span>
+        <ul className={styles.visitingList}>
+          <li>
+            <img
+            src="https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg"
+            alt="user image not found"/>
+            <div className="user-info">
+              <span>John Doe</span>
+              <span>Director Technology</span>
+            </div>
           </li>
-          <li className="mdl-list__item mdl-list__item--two-line">
-            <span className="mdl-list__item-primary-content">
-              <img
-              className="visitor-avatar"
-              src="https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg"
-              alt="user image not found"/>
-              <div className="user-info">
-                <span>John Doe</span>
-                <span>Director Technology</span>
-              </div>
-            </span>
+          <li>
+            <img
+            src="https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg"
+            alt="user image not found"/>
+            <div className="user-info">
+              <span className={styles.name}>John Doe</span>
+              <span>Director Technology</span>
+            </div>
           </li>
         </ul>
       </div>

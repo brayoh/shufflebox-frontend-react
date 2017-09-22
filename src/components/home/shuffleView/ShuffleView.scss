@@ -14,4 +14,9 @@
 .brownBag {
   width: 50vw;
   background: #fff;
+  flex-grow: 2;
+}
+
+.leftNav {
+  flex-grow: 1;
 }

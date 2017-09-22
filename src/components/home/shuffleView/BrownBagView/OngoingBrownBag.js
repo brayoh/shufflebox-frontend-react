@@ -4,6 +4,8 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as brownbagActions from '../../../../actions/brownbagActions';
 
+const styles = require('./OngoingBrownBag.scss');
+
 class OngoingBrownBag extends React.Component {
   constructor(props) {
     super(props);
@@ -16,18 +18,18 @@ class OngoingBrownBag extends React.Component {
   }
 
   unpresentedUsers() {
+    let truncatedUsers = this.props.users;
+    truncatedUsers.shift();
+    truncatedUsers.length = 6;
+    console.log('users', truncatedUsers);
     return (
-      this.props.users.map((user, index) =>
-      <li key = {index} className="mdl-list__item mdl-list__item--two-line">
-        <span className="mdl-list__item-primary-content">
-          <img
+      truncatedUsers.map((user, index) =>
+      <li key = {index}>
+        <img
           className="avatar"
-          src={user.profile.avatar}
+          src={user.profile.avatar || 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=50'}
           alt="user image not found"/>
-          <div className="user-info">
-            <span>{`${user.first_name} ${user.last_name}`}</span>
-          </div>
-        </span>
+        <span className={styles.userInfo}>{`${user.first_name} ${user.last_name}`}</span>
       </li>
       )
     );
@@ -35,11 +37,9 @@ class OngoingBrownBag extends React.Component {
 
   render() {
     return (
-      <div className="onlist-brown-bag">
-        <div className="onlist-title">
+      <div className={styles.onlistBrownBag}>
           <span>WHO'S ON THE LIST</span>
-        </div>
-        <ul className="mdl-list">
+        <ul className={styles.onList}>
           {this.unpresentedUsers()}
         </ul>
       </div>

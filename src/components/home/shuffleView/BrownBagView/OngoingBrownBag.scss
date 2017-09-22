@@ -1,0 +1,22 @@
+.onlistBrownBag {
+  margin-top: 2rem;
+  >span {
+    margin: 0 8rem;
+    padding-top: 2rem;
+    color: #858482;
+  }
+}
+
+.onList {
+  list-style: none;
+  margin-left: 4rem;
+
+  > li >img {
+    margin: 1rem;
+    border-radius: 50%;
+  }
+}
+
+.userInfo {
+  color: #959593;
+}

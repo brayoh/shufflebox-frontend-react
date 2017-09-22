@@ -4,6 +4,8 @@ import NavTabs from '../../common/navTabs/NavTabs';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Nav, NavItem } from 'react-bootstrap';
 import BrownBag from './BrownBagView/BrownBag';
+import OngoingBrownBag from './BrownBagView/OngoingBrownBag';
+import VisitorBrownBag from './BrownBagView/VisitorBrownBag';
 
 const FontAwesome = require('react-fontawesome');
 const styles = require('./ShuffleView.scss');
@@ -30,8 +32,11 @@ class ShuffleView extends React.Component {
         </NavTabs>
         <div className={styles.shuffle}>
           {/* <BrownBag /> */}
-          <div className={styles.brownBag} >brownbag</div>
-          <div className={styles.leftNav}>left sidenav</div>
+          <div className={styles.brownBag}>BROWNBAG</div>
+          <div className={styles.leftNav}>
+            <OngoingBrownBag />
+            <VisitorBrownBag/>
+          </div>
         </div>
       </div>
     );
