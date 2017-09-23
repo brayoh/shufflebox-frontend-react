@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import UUID from 'node-uuid';
 import * as actions from '../../../../actions/confirmModalActions';
 import ConfirmModal from '../../../common/ConfirmModal'
-// import { Icon } from 'react-fa';
+import { Icon } from 'react-fa';
 
 
 const styles = require('./PreviousBrownBag.scss');
@@ -37,7 +37,7 @@ class PreviousBrownBag extends React.Component {
           src={candidate.user.profile.avatar}
           alt="user image not found"/>
           <span>{candidate.user.username}</span>
-          {/* <Icon name="check-circle-o" size="2x" /> */}
+          <span onClick={this.handleClick(candidate)}><Icon name="check-circle-o" size="2x" /></span>
           {/* <label
           className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
           htmlFor="list-checkbox-1">

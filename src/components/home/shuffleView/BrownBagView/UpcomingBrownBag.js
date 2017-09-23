@@ -5,6 +5,7 @@ import CircularProgress from 'material-ui/CircularProgress';
 // import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // import FlatButton from 'material-ui/FlatButton';
 import {Icon} from 'react-fa';
+import { Button }from 'react-bootstrap';
 
 import * as brownbagActions from '../../../../actions/brownbagActions';
 
@@ -47,14 +48,12 @@ class UpcomingBrownBag extends React.Component {
                 <span>{`${presenter.user.first_name} ${presenter.user.last_name}`}</span>
                 <span>{presenter.user.date}</span>
               </div>
-              {/* <div>
-                <button label="Confirm" primary
-                  onClick={this.handleConfirmBrownbag(brownBag)}
-                />
-              <button label="Cancel" secondary
-                  onClick={this.handleCancelBrownbag(brownBag)}
-                />
-              </div> */}
+              <Button className={styles.confirmButton} bsStyle="primary" onClick={this.handleConfirmBrownbag({ id: presenter.id, date: presenter.date, status:'' })}>
+                Confirm
+                </Button>          
+              <Button bsStyle="danger" className={styles.cancelButton} onClick={this.handleCancelBrownbag({ id: presenter.id, date: presenter.date, status:'' })}>
+            Cancel
+            </Button>   
             </li>
           )
           );

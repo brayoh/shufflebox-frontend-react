@@ -24,6 +24,7 @@
 .upcomingList {
   list-style: none;
   margin-left: 4rem;
+  position: relative;
 
   >li  {
     display: flex;
@@ -44,4 +45,16 @@
       }
     }
   }
+}
+
+.confirmButton {
+  margin: 1rem;
+  position: absolute;
+  right: 15rem;
+}
+
+.cancelButton {
+  margin: 1rem;
+  position: absolute;
+  right: 4rem;
 }
