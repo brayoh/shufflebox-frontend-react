@@ -20,3 +20,12 @@
 .leftNav {
   flex-grow: 1;
 }
+
+.ellipsis {
+  >li {
+    a {
+      color: red;
+    }
+  }
+  // margin: 5rem 4rem 0;
+}

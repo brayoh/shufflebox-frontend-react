@@ -6,8 +6,8 @@ import { Nav, NavItem } from 'react-bootstrap';
 import BrownBag from './BrownBagView/BrownBag';
 import OngoingBrownBag from './BrownBagView/OngoingBrownBag';
 import VisitorBrownBag from './BrownBagView/VisitorBrownBag';
+import { Icon } from 'react-fa';
 
-const FontAwesome = require('react-fontawesome');
 const styles = require('./ShuffleView.scss');
 
 // import './ShuffleView.scss';
@@ -18,7 +18,7 @@ class ShuffleView extends React.Component {
       <div className={styles.shuffleContainer}>
         <NavTabs>
           <LinkContainer to={'/home/brownbag'}>
-            <NavItem eventKey={1}>Brown Bag</NavItem>
+            <NavItem>Brown Bag</NavItem>
           </LinkContainer>
           <LinkContainer to={'/home/secretsanta'}>
             <NavItem href="/secretsanta">Secret Santa</NavItem>
@@ -26,13 +26,14 @@ class ShuffleView extends React.Component {
           <LinkContainer to={'/home/hangouts'}>
             <NavItem href="/hangouts">Hangouts</NavItem>
           </LinkContainer>
-          <Nav pullRight>
-            <NavItem eventKey={1} href="#"><FontAwesome name="fa-ellipsis-h" /></NavItem>
+          <Nav pullRight className={styles.ellipsis}>
+            <NavItem href="#"><Icon name="ellipsis-h" size="2x" /></NavItem>
           </Nav>
         </NavTabs>
-        <div className={styles.shuffle}>
-          {/* <BrownBag /> */}
-          <div className={styles.brownBag}>BROWNBAG</div>
+        <div className={styles.shuffle}>       
+          <div className={styles.brownBag}>
+            <BrownBag />
+          </div>
           <div className={styles.leftNav}>
             <OngoingBrownBag />
             <VisitorBrownBag/>
