@@ -1,6 +1,9 @@
 import React from 'react';
 import fetch from 'isomorphic-fetch';
 import fetchUrl from '../../../config';
+import { Button } from 'react-bootstrap';
+
+const styles = require('./ShuffleEvents.scss');
 
 class ShuffleEvents extends React.Component {
   constructor(props){
@@ -33,12 +36,12 @@ class ShuffleEvents extends React.Component {
 
   render() {
     return (
-      <div className="shuffle-brown-bag">
-        <h6>27 jan - 20 mar</h6>
+      <div className={styles.shuffleEvents}>
+        <h5>27 jan - 20 mar</h5>
         <h4>Next brown bag is almost up...</h4>
-        <button onClick={this.shuffle} className="mdl-button mdl-js-button mdl-button--raised">
-          <i className="material-icons">mood</i>SHUFFLE
-        </button>
+        <Button className={styles.shuffleButton} onClick={this.shuffle} >
+        <img src="https://www.dropbox.com/s/okgmtdpih1xxau3/Shuffle.png?raw=1"/>SHUFFLE
+        </Button>
       </div>
     );
   }

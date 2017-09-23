@@ -1,0 +1,29 @@
+.shuffleEvents {
+  border-bottom: 1px solid #e0e0e0;
+  
+  >h5 {
+    margin-left: 4rem;
+    color: #8f8e8c;
+    margin: 4rem 4rem 1rem;
+  }
+  >h4 {
+    margin-left: 4rem;
+    color: #9f9f9f;
+    font-weight: 300;
+    font-size: 2.5rem;
+  }
+}
+
+.shuffleButton {
+  background-color: #3c99d8;
+  color: #fff;
+  display: block;
+  margin: 4rem auto;
+  width: 13vw;
+  padding: 0.7rem;
+  
+  >img {
+    width: 10%;
+    margin: 0 0.7rem;
+  }
+}
