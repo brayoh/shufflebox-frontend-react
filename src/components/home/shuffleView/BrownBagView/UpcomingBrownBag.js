@@ -2,10 +2,14 @@ import React from 'react';
 import PropTypes from "prop-types";
 import {connect} from 'react-redux';
 import CircularProgress from 'material-ui/CircularProgress';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import FlatButton from 'material-ui/FlatButton';
+// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+// import FlatButton from 'material-ui/FlatButton';
+import {Icon} from 'react-fa';
 
 import * as brownbagActions from '../../../../actions/brownbagActions';
+
+const styles = require('./UpcomingBrownBag.scss');
+
 
 class UpcomingBrownBag extends React.Component {
   constructor(props){
@@ -29,48 +33,48 @@ class UpcomingBrownBag extends React.Component {
 
   nextPresenters() {
     const { presenters }  = this.props;
-    if (presenters.user) {
-      const brownBag = { id: presenters.id, date: presenters.date, status:'' };
-      return (
-        <MuiThemeProvider>
-          <li className="mdl-list__item">
-            <span className="mdl-list__item-primary-content">
+    console.log('presenters', presenters)
+    if (presenters.length > 0 ) {
+        // const brownBag = { id: presenter.id, date: presenter.date, status:'' };
+        return (
+          presenters.map((presenter, index) =>
+            <li key={index}>
               <img
               className="avatar"
-              src={presenters.user.profile.avatar}
+              src={presenter.user.profile.avatar}
               alt="user image not found"/>
               <div className="user-info">
-                <span>{`${presenters.user.first_name} ${presenters.user.last_name}`}</span>
-                <span className="mdl-list__item-sub-title">{presenters.user.date}</span>
+                <span>{`${presenter.user.first_name} ${presenter.user.last_name}`}</span>
+                <span>{presenter.user.date}</span>
               </div>
-              <div>
-                <FlatButton label="Confirm" primary
+              {/* <div>
+                <button label="Confirm" primary
                   onClick={this.handleConfirmBrownbag(brownBag)}
                 />
-              <FlatButton label="Cancel" secondary
+              <button label="Cancel" secondary
                   onClick={this.handleCancelBrownbag(brownBag)}
                 />
-              </div>
-            </span>
-          </li>
-        </MuiThemeProvider>
-        );
-    }
-    return (
-      <p>Loading .....</p>
-    );
+              </div> */}
+            </li>
+          )
+          );
+    } else {
+      return (
+        // <Icon spin name="spinner" />
+        <p>Loading .....</p>
+      );
+    } 
   }
 
   render(){
     return (
-      <div className="upcoming-brown-bag">
-          <div className="upcoming-title">
-            <h6>Upcoming Brown Bag</h6>
-            <span className="mdl-list__item-sub-title">27 jan</span>
-         </div>
-           <ul className="mdl-list">
-            {this.nextPresenters()}
+      <div className={styles.upcomingBrownBag}>
+        <h5>Upcoming Brown Bag</h5>
+        <span className={styles.date}>27 Jan</span>
+        <ul className={styles.upcomingList}>
+          {this.nextPresenters()}
         </ul>
+        <hr/>
       </div>
     );
   }

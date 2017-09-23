@@ -1,0 +1,45 @@
+.upcomingBrownBag {
+  margin-top: 2rem;
+  >h5 {
+    color: black;
+    margin: 4rem 8rem 1rem;
+    font-weight: 1rem;
+  }
+  >span {
+    display: block;
+    color: #858482;
+    margin: 1rem 8rem;
+  }
+
+}
+
+.date {
+  display: block;
+  color: #858482;
+  margin: 1rem 4rem;
+}
+
+.upcomingList {
+  list-style: none;
+  margin-left: 4rem;
+
+  >li  {
+    display: flex;
+    align-items: center;
+    > img {
+      margin: 1rem;
+      width: 11%;
+      border-radius: 50%;
+      height: 11%;
+    }
+    >div {
+      span:nth-child(1) {
+        color: #8f8e8c;
+      }
+      span:nth-child(2) {
+        display: block;
+        color: #c6c5c3;
+      }
+    }
+  }
+}
