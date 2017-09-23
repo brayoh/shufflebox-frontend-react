@@ -8,14 +8,12 @@ class CurrentUser extends React.Component {
 
   render(){
     return (
-      <div>
-        <div className={styles.user}>
-          <img
-            className={styles.userAvatar}
-            src="https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg"
-            alt="user image not found"/>
-          <span>What is your next event?</span>
-        </div>
+      <div className={styles.user}>
+        <img
+          className={styles.userAvatar}
+          src="https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg"
+          alt="user image not found"/>
+        <span>What is your next event?</span>
       </div>
     );
   }

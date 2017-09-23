@@ -4,16 +4,34 @@ export default {
     "id": 666,
     "name": "The Beast",
     "date": "Fri Jan 20 2017",
-    "email": "a@example.com",
-    "avatar": "avatarUrl.com",
+    "user": {
+      "id": 45,
+      "first_name": "The",
+      "last_name": "Beast",
+      "email": "a@example.com",
+      "profile": {
+        "avatar": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=50",
+        "birth_date": null,
+        "bio": ""
+      }
+    },
     "status": "nextInLine"
   },
   {
     "id": 333,
-    "name": "Half Man",
-    "date": "Sat Jun 2 2016",
-    "email": "man@email.com",
-    "avatar": "avatarUrl.com",
+    "name": "The Beast",
+    "date": "Fri Feb 20 2017",
+    "user": {
+      "id": 45,
+      "first_name": "Half",
+      "last_name": "Man",
+      "email": "man@email.com",
+      "profile": {
+        "avatar": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=50",
+        "birth_date": null,
+        "bio": ""
+      }
+    },
     "status": "nextInLine"
   }],
   previous_brownbag_list: [

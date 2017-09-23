@@ -11,11 +11,13 @@
 }
 
 .user {
-  height: 13.7vh;
+  height: 10%;
   background-color: $light-blue;
   margin-left: 7rem;
   >span {
     margin-left: 1rem;
     color: $light-gray;
+    font-weight: 300;
+    font-size: 2rem;
   }
 }

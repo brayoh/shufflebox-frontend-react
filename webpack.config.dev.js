@@ -2,6 +2,8 @@ import webpack from 'webpack';
 import path from 'path';
 import dotenv from 'dotenv';
 
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 dotenv.config();
 // process.traceDeprecation = true;
 
@@ -25,6 +27,7 @@ export default {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new ExtractTextPlugin('style.css'),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
@@ -41,13 +44,13 @@ export default {
       },
       {
         test: /\.css/,
-        use: [{
-            loader: "style-loader"
-          },
-          {
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [{
             loader: "css-loader"
-          }
-        ]
+          }]
+        })
+        
       },
       {
         test: /\.scss$/,
@@ -71,6 +74,18 @@ export default {
             }
           }
         ]
+      },
+      // the url-loader uses DataUrls.
+      // the file-loader emits files.
+      {
+        test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        // Limiting the size of the woff fonts breaks font-awesome ONLY for the extract text plugin
+        // loader: "url?limit=10000"
+        use: "url-loader"
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
+        use: 'file-loader'
       }
     ],
     loaders: [{
@@ -86,9 +101,18 @@ export default {
         test: /(\.scss)$/,
         loaders: ['style-loader', 'css-loader', 'sass-loader']
       },
+      // {
+      //   test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      //   loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+      // },
+      // {
+      //   test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      //   loader: 'file-loader'
+      // },
+      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "file"
+        loader: "file-loader"
       },
       {
         test: /\.(woff|woff2)$/,
