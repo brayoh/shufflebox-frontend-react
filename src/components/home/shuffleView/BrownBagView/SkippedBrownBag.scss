@@ -1,29 +1,12 @@
-.upcomingBrownBag {
-  // 
+.skippedBrownBag {
+  background: #f9f9f9;
   border-bottom: 1px solid #e0e0e0;
-  
-  >h5 {
-    color: #7f8180;
-    margin: 4rem 4rem 1rem;
-    font-weight: 300;
-    font-size: 2.5rem;
-  }
-  >span {
-    display: block;
-    color: #858482;
-  }
-
 }
 
-.date {
-  display: block;
-  color: #858482;
-  margin: 1rem 4rem;
-}
-
-.upcomingList {
+.skippedList {
   list-style: none;
-  margin-left: 4rem;
+  margin-left: 2.3rem;
+  padding: 2rem;
 
   >li  {
     display: flex;

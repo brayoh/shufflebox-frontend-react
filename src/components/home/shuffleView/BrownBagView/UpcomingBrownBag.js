@@ -74,7 +74,6 @@ class UpcomingBrownBag extends React.Component {
         <ul className={styles.upcomingList}>
           {this.nextPresenters()}
         </ul>
-        <hr/>
       </div>
     );
   }

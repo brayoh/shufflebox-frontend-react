@@ -3,6 +3,20 @@ import PropTypes from "prop-types";
 import {connect} from 'react-redux';
 import UUID from 'node-uuid';
 
+const styles = require('./SkippedBrownBag.scss');
+
+const   skipped_brown_bag = [
+  {
+    "id": 19,
+    "username": "Test Andela",
+    "email": "test-user9@andela.com",
+    "profile": {
+      "avatar": "https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg",
+      "birth_date": null,
+      "bio": ""
+    }
+  }
+];
 class SkippedBrownBag extends React.Component {
   constructor(props){
     super(props);
@@ -12,26 +26,25 @@ class SkippedBrownBag extends React.Component {
 
   listSkippedCandidates(candidates) {
     const listSkippedCandidates = candidates.map((candidate)=>
-      <li key={UUID.v4()} className="mdl-list__item mdl-list__item--two-line">
-        <span className="mdl-list__item-primary-content">
-          <img
-          className="avatar"
-          src={candidate.profile.avatar}
-          alt="user image not found"/>
-          <div className="user-info">
-            <span>{candidate.username}</span>
-            <span className="mdl-list__item-sub-title">27 jan - 20 mar</span>
-          </div>
-        </span>
+      <li key={UUID.v4()}>
+        <img
+        className="avatar"
+        src={candidate.profile.avatar}
+        alt="user image not found"/>
+        <div className="user-info">
+          <span>{candidate.username} skipped Brown Bag last week</span>
+          <span>27 jan - 20 mar</span>
+        </div>
       </li>
     );
     return listSkippedCandidates;
   }
 
   render(){
+    console.log('skipped', this.props.skipped_brownbag_list);
     return (
-      <div className="skipped-brown-bag">
-        <ul className="mdl-list">
+      <div className={styles.skippedBrownBag}>
+        <ul className={styles.skippedList}>
           {this.listSkippedCandidates(this.props.skipped_brownbag_list)}
         </ul>
       </div>
@@ -44,7 +57,7 @@ SkippedBrownBag.propTypes = {
 
 function mapStateToProps(state, ownProps){
   return {
-    skipped_brownbag_list: state.skippedCandidatesReducer
+    skipped_brownbag_list: state.skippedCandidatesReducer || skipped_brown_bag
   };
 }
 export default connect(mapStateToProps)(SkippedBrownBag);

@@ -10,7 +10,7 @@ class Content extends React.Component {
   }
 
   goToHomePage = () => {
-    window.location.href = `${window.location.href}${'home'}`;
+    window.location.href = `${window.location.href}${'home/brownbag'}`;
   }
 
   render(){

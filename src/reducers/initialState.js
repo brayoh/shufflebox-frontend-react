@@ -41,7 +41,7 @@ export default {
       "status": "done",
       "user": {
         "id": 10,
-        "username": "test-user-1",
+        "username": "Test User1",
         "email": "test-user1@andela.com",
         "profile": {
           "avatar": "https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg",
@@ -56,7 +56,7 @@ export default {
       "status": "done",
       "user": { 
         "id": 11, 
-        "username": "test-user-2", 
+        "username": "Test User2", 
         "email": "test-user2@andela.com",
         "profile": { 
           "avatar": "https://motherboard-images.vice.com//content-images/contentimage/41599/1485499779158756.jpg",
