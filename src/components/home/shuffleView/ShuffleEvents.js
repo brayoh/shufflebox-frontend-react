@@ -37,7 +37,7 @@ class ShuffleEvents extends React.Component {
   render() {
     return (
       <div className={styles.shuffleEvents}>
-        <h5>27 jan - 20 mar</h5>
+        <h5>27 Jan - 20 Mar</h5>
         <h4>Next brown bag is almost up...</h4>
         <Button className={styles.shuffleButton} onClick={this.shuffle} >
         <img src="https://www.dropbox.com/s/okgmtdpih1xxau3/Shuffle.png?raw=1"/>SHUFFLE
