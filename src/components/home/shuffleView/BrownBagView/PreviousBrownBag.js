@@ -37,7 +37,8 @@ class PreviousBrownBag extends React.Component {
           src={candidate.user.profile.avatar}
           alt="user image not found"/>
           <span>{candidate.user.username}</span>
-          <span onClick={this.handleClick(candidate)}><Icon name="check-circle-o" size="2x" /></span>
+          <Icon name="fa fa-angle-left"></Icon>
+          {/* <span onClick={this.handleClick(candidate)}><Icon name="check-circle-o" size="2x" /></span> */}
           {/* <label
           className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
           htmlFor="list-checkbox-1">

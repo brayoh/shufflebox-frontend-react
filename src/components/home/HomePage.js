@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import BrownBag from './shuffleView/BrownBagView/BrownBag';
-import Calendar from './calendarView/Calendar';
+import SidePanel from './calendarView/SidePanel';
 import ShuffleView from './shuffleView/ShuffleView';
 
 import {connect} from 'react-redux';
@@ -16,7 +16,7 @@ class HomePage extends React.Component {
   render(){
     return (
       <div className={styles.homePageContainer}>
-        <Calendar />
+        <SidePanel />
         <ShuffleView />
         {/* <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header ">
           <div className="mdl-grid">

@@ -1,20 +1,18 @@
 import React from 'react';
-import CurrentUser from './CurrentUser';
 
 const styles = require('./Calendar.scss');
 
-class Calendar extends React.Component {
-  constructor(props){
-    super(props);
-  }
-
-  render(){
+export default class Calendar extends React.Component {
+  render() {
     return (
-        <div className={styles.calendarPanel}>
-          <CurrentUser />
-        </div>
+      <div className={styles.info}>
+        <span>Brown Bags</span>
+        <h5>Selected Weekly</h5>
+        <span>Hangouts</span>
+        <h5>Selected Monthly</h5>
+        <span>Secret Santa</span>
+        <h5>Selected Yearly</h5>
+      </div>    
     );
   }
 }
-
-export default Calendar;

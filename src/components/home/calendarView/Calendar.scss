@@ -1,7 +1,10 @@
-@import '../../../styles/base/_variables.scss';
-
-.calendarPanel {
-  display: block;
-  width: 40%;
-  background: $main-blue;
+.info {
+  margin: 4rem 7rem;
+  >span {
+    color: #787eb8;
+  }
+  >h5 {
+    font-size: 2rem;
+    color: #fff;
+  }
 }
