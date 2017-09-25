@@ -46,14 +46,14 @@ class UpcomingBrownBag extends React.Component {
               alt="user image not found"/>
               <div className="user-info">
                 <span>{`${presenter.user.first_name} ${presenter.user.last_name}`}</span>
-                <span>{presenter.user.date}</span>
+                <span>{presenter.date}</span>
               </div>
               <Button className={styles.confirmButton} bsStyle="primary" onClick={this.handleConfirmBrownbag({ id: presenter.id, date: presenter.date, status:'' })}>
                 Confirm
-                </Button>          
+              </Button>          
               <Button bsStyle="danger" className={styles.cancelButton} onClick={this.handleCancelBrownbag({ id: presenter.id, date: presenter.date, status:'' })}>
-            Cancel
-            </Button>   
+                Cancel
+              </Button>   
             </li>
           )
           );
