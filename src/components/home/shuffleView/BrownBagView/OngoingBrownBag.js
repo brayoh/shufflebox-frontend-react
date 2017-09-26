@@ -20,8 +20,7 @@ class OngoingBrownBag extends React.Component {
   unpresentedUsers() {
     let truncatedUsers = this.props.users;
     truncatedUsers.shift();
-    truncatedUsers.length = 6;
-    console.log('users', truncatedUsers);
+    truncatedUsers.length = 6;  //hack to get the first 6 users
     return (
       truncatedUsers.map((user, index) =>
       <li key = {index}>

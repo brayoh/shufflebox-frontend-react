@@ -32,7 +32,8 @@ class SkippedBrownBag extends React.Component {
         src={candidate.profile.avatar}
         alt="user image not found"/>
         <div className="user-info">
-          <span>{candidate.username} skipped Brown Bag last week</span>
+          <h5>{candidate.username}</h5>
+          <span>skipped Brown Bag last week</span>
           <span>27 jan - 20 mar</span>
         </div>
       </li>

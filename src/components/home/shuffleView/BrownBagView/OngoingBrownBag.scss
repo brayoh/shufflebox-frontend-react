@@ -1,9 +1,11 @@
+@import '../../../../styles/base/_variables.scss';
+
 .onlistBrownBag {
   margin-top: 2rem;
   >span {
     margin: 0 4rem;
     padding-top: 2rem;
-    color: #858482;
+    color: darken($light-gray, 55%);
   }
 }
 
@@ -11,12 +13,12 @@
   list-style: none;
   margin-left: 4rem;
 
-  > li >img {
+  li >img {
     margin: 1rem;
     border-radius: 50%;
   }
 }
 
 .userInfo {
-  color: #959593;
+  color: darken($light-gray, 50%);
 }
