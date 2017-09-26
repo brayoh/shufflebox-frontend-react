@@ -17,7 +17,8 @@ class Content extends React.Component {
     return (
       <div className={styles.contentContainer}>
         <div className={styles.intro}>
-        <h1>Goodbye paper<br/>Hello Shufflebox</h1>
+        <img src="https://www.dropbox.com/s/okgmtdpih1xxau3/Shuffle.png?raw=1"/>
+        <h1>Goodbye paper<br/>hello shufflebox</h1>
         <p>
           With our new app you will be able to automate the task of selecting Andelans for hangouts,
           brown bag and secret santa.

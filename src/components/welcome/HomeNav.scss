@@ -6,24 +6,30 @@
   display: flex;
   align-items: center;
   height: 10vh;
-
   border-color: #fff;    
-  >div {
+  div {
     margin-left: 1rem;
   }
   .rightItems {
-    >li > a {
-      color: darken($dark-gray, 50%);
+    li {
+    a:hover {
+        color: $blue;
+      }
+      a {
+        color: darken($dark-gray, 50%);
+      }
     }
   }
 }
 
 .brand {
-  >img {
+  margin-left: 12rem !important;
+  img {
     display: inline-block;
     width: 10%;
   }
-  >span {
+  span {
     color: darken($dark-gray, 50%);
+    padding-left: 0.5rem;
   }
 }
