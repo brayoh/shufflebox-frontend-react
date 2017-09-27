@@ -1,17 +1,14 @@
 import * as actions from './actionTypes';
 
-export function showModal(message, brownbagID){
+export function showModal(){
   // Modal is an object that contains isShowing (boolean) and message (string )
   return {
-    type: actions.SHOW_CONFIRM_MODAL_SUCCESS,
-    message: message,
-    id: brownbagID
+    type: actions.OPEN_REMOVE_USER_CONFIRM_MODAL
   };
 }
 
 export function hideModal(){
   return {
-    type: actions.HIDE_CONFIRM_MODAL_SUCCESS
-
+    type: actions.DISMISS_REMOVE_USER_CONFIRM_MODAL
   };
 }

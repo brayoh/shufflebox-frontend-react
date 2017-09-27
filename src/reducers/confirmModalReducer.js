@@ -1,23 +1,21 @@
 import * as types from '../actions/actionTypes';
 import initialState from './initialState';
+import modalTypes from '../enums/modalTypes';
 
-export function confirmModalReducer( state=initialState.confirm_modal, action) {
+export function confirmModalReducer( state=initialState.modal, action) {
   switch (action.type) {
-    case types.SHOW_CONFIRM_MODAL_SUCCESS:
-      return Object.assign(
-        {}, state, {
-          message: action.message,
-          isShowing: true,
-          id: action.id
-        });
+    case types.OPEN_REMOVE_USER_CONFIRM_MODAL:
+      return {
+        ...state,
+        modal: modalTypes.REMOVE_USER
+      };
 
-    case types.HIDE_CONFIRM_MODAL_SUCCESS:
-      return Object.assign(
-        {}, state, {
-          message: '',
-          isShowing: false,
-          id: 0
-        });  
+    case types.DISMISS_REMOVE_USER_CONFIRM_MODAL:
+      return {
+        ...state,
+        modal: modalTypes.NONE
+
+      };
   
     default:
       return state;  

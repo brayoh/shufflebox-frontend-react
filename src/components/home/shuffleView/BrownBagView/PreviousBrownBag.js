@@ -3,58 +3,58 @@ import PropTypes from "prop-types";
 import {connect} from 'react-redux';
 import UUID from 'node-uuid';
 import * as actions from '../../../../actions/confirmModalActions';
-import ConfirmModal from '../../../common/ConfirmModal'
-import { Icon } from 'react-fa';
-
+import { Button, Glyphicon, Modal } from 'react-bootstrap';
+import modalTypes from '../../../../enums/modalTypes';
 
 const styles = require('./PreviousBrownBag.scss');
 
 class PreviousBrownBag extends React.Component {
   constructor(props) {
     super(props);
-    this.handleModalCancel = this.handleModalCancel.bind(this);
-    this.handleConfirm = this.handleConfirm.bind(this);
     this.listPreviousCandidates = this.listPreviousCandidates.bind(this);
+
+    this.state = {
+      selectedUser : {
+        user: {
+          username: ''
+        }
+      }
+    };
   }
   
   handleClick = (user) => {
-    this.props.showModal("Remove user ", user.id);
+    this.props.showModal();
+    this.setState({
+      selectedUser: user
+    });
   }
 
-  handleConfirm() {
+  handleConfirm = () => {
     this.handleModalCancel();
   }
 
-  handleModalCancel() {
+  handleModalCancel = () => {
     this.props.hideModal();
   }
 
   listPreviousCandidates(candidates) {
-    const listPreviousCandidates = candidates.map((candidate) =>
+   return (
+     candidates.map((candidate) =>
       <li key={UUID.v4()}>
         <img
           className="avatar"
           src={candidate.user.profile.avatar}
           alt="user image not found"/>
           <span>{candidate.user.username}</span>
-          <Icon name="fa fa-angle-left"></Icon>
-          {/* <span onClick={this.handleClick(candidate)}><Icon name="check-circle-o" size="2x" /></span> */}
-          {/* <label
-          className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
-          htmlFor="list-checkbox-1">
-            <input 
-            type="checkbox" 
-            id="list-checkbox-1" 
-            className="mdl-checkbox__input" 
-            checked
-            onClick={this.handleClick(candidate)} />
-          </label> */}
+          <Button className={styles.okCircle} onClick={() => this.handleClick(candidate)}> 
+            <Glyphicon glyph="ok-circle" />
+          </Button>
       </li>
-    );
-    return listPreviousCandidates;
+    ));
   }
 
   render() {
+    const show = this.props.modal === modalTypes.REMOVE_USER;
     return (
       <div className={styles.previousBrownBag}>
         <h5>Previous Brown Bags</h5>
@@ -62,7 +62,21 @@ class PreviousBrownBag extends React.Component {
         <ul className={styles.previousList}>
           {this.listPreviousCandidates(this.props.previous_candidates_list)}
         </ul>
-        {/* <ConfirmModal onConfirm={this.handleConfirm} onCancel={this.handleModalCancel} /> */}
+        <Modal
+          show={show}
+          onHide={this.handleModalCancel}
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>Remove user</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <span>{`Are you sure do you want to remove ${this.state.selectedUser.user.username}`}</span>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={this.handleConfirm}>OK</Button>
+            <Button onClick={this.handleModalCancel}>Cancel</Button>
+          </Modal.Footer>
+        </Modal>
       </div>
     );
   }
@@ -78,14 +92,14 @@ PreviousBrownBag.propTypes = {
 function mapStateToProps(state, ownProps) {
   return {
     previous_candidates_list: state.previousCandidatesReducer,
-    confirm_modal: state.confirmModalReducer
+    modal: state.confirmModalReducer.modal
   };
 }
 
 function mapDispatchToProps(dispatch, ownProps) {
   return {
-    showModal: (message, brownbagID) => {
-      dispatch(actions.showModal(message, brownbagID));
+    showModal: () => {
+      dispatch(actions.showModal());
     },
     hideModal: () => {
       dispatch(actions.hideModal());

@@ -42,7 +42,6 @@ class SkippedBrownBag extends React.Component {
   }
 
   render(){
-    console.log('skipped', this.props.skipped_brownbag_list);
     return (
       <div className={styles.skippedBrownBag}>
         <ul className={styles.skippedList}>

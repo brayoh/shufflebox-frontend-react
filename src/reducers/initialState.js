@@ -1,3 +1,5 @@
+import modalTypes from '../enums/modalTypes';
+
 export default {
   brownbag_next_presenter: [
     {
@@ -180,9 +182,5 @@ export default {
   ongoing_brownbag_list: [
 
   ],
-  confirm_modal: {
-    isShowing: false,
-    id: 0,
-    message: ''
-  }
+  modal: modalTypes.NONE
 };
