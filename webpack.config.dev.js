@@ -9,21 +9,21 @@ dotenv.config();
 
 export default {
   // debug: true,
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   // noInfo: false,
   entry: [
-    "eventsource-polyfill", // necessary for hot reloading with IE
-    "webpack-hot-middleware/client?reload=true", //note that it reloads the page if hot module reloading fails.
-    path.resolve(__dirname, "src/index")
+    'eventsource-polyfill', // necessary for hot reloading with IE
+    'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails.
+    path.resolve(__dirname, 'src/index')
   ],
-  target: "web",
+  target: 'web',
   output: {
-    path: __dirname + "/dist", // Note: Physical files are only output by the production build task `npm run build`.
-    publicPath: "/",
-    filename: "bundle.js"
+    path: __dirname + '/dist', // Note: Physical files are only output by the production build task `npm run build`.
+    publicPath: '/',
+    filename: 'bundle.js'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, "src")
+    contentBase: path.resolve(__dirname, 'src')
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -45,9 +45,9 @@ export default {
       {
         test: /\.css/,
         use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
+          fallback: 'style-loader',
           use: [{
-            loader: "css-loader"
+            loader: 'css-loader'
           }]
         })
         
@@ -55,10 +55,10 @@ export default {
       {
         test: /\.scss$/,
         use: [{
-            loader: "style-loader" // creates style nodes from JS strings
+            loader: 'style-loader' // creates style nodes from JS strings
           },
           {
-            loader: "css-loader", // translates CSS into CommonJS
+            loader: 'css-loader', // translates CSS into CommonJS
             options: {
               modules: true,
               importLoaders: 2,
@@ -67,7 +67,7 @@ export default {
             }
           },
           {
-            loader: "sass-loader", // compiles Sass to CSS
+            loader: 'sass-loader', // compiles Sass to CSS
             options: {
               outputStyle: 'expanded',
               sourceMap: true
@@ -80,8 +80,8 @@ export default {
       {
         test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         // Limiting the size of the woff fonts breaks font-awesome ONLY for the extract text plugin
-        // loader: "url?limit=10000"
-        use: "url-loader"
+        // loader: 'url?limit=10000'
+        use: 'url-loader'
       },
       {
         test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
@@ -90,12 +90,12 @@ export default {
     ],
     loaders: [{
         test: /\.js$/,
-        include: path.join(__dirname, "src"),
-        loaders: ["babel"]
+        include: path.join(__dirname, 'src'),
+        loaders: ['babel']
       },
       {
         test: /(\.css)$/,
-        loaders: ["style", "css"]
+        loaders: ['style', 'css']
       },
       {
         test: /(\.scss)$/,
@@ -112,27 +112,27 @@ export default {
       { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "file-loader"
+        loader: 'file-loader'
       },
       {
         test: /\.(woff|woff2)$/,
-        loader: "url?prefix=font/&limit=5000"
+        loader: 'url?prefix=font/&limit=5000'
       },
       {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url?limit=10000&mimetype=application/octet-stream"
+        loader: 'url?limit=10000&mimetype=application/octet-stream'
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url?limit=10000&mimetype=image/svg+xml"
+        loader: 'url?limit=10000&mimetype=image/svg+xml'
       },
       {
         test: /\.(png|jpg|)$/,
-        loader: "url-loader?limit=200000"
+        loader: 'url-loader?limit=200000'
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: "image-webpack-loader",
+        loader: 'image-webpack-loader',
         options: {
           query: {
             mozjpeg: {
