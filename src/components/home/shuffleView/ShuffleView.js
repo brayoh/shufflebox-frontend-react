@@ -2,11 +2,10 @@ import React from 'react';
 import NavTabs from '../../common/navTabs/NavTabs';
 // import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Nav, NavItem } from 'react-bootstrap';
+import { Button, Glyphicon, Nav, NavItem } from 'react-bootstrap';
 import BrownBag from './BrownBagView/BrownBag';
 import OngoingBrownBag from './BrownBagView/OngoingBrownBag';
 import VisitorBrownBag from './BrownBagView/VisitorBrownBag';
-import { Icon } from 'react-fa';
 
 const styles = require('./ShuffleView.scss');
 
@@ -26,10 +25,9 @@ class ShuffleView extends React.Component {
           <LinkContainer to={'/home/hangouts'}>
             <NavItem href="/hangouts">Hangouts</NavItem>
           </LinkContainer>
-          <Nav pullRight className={styles.ellipsis}>
-            <NavItem href="#"><Icon name="ellipsis-h" size="2x" /></NavItem>
-          </Nav>
+          <Button className={styles.ellipsis}><Glyphicon glyph="option-horizontal" /></Button>
         </NavTabs>
+        
         <div className={styles.shuffle}>       
           <div className={styles.brownBag}>
             <BrownBag />

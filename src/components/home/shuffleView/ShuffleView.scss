@@ -23,10 +23,15 @@
 }
 
 .ellipsis {
-  >li {
-    a {
-      color: #efeeec;
-    }
+  color: $dark-gray;
+  position: absolute;
+  right: 5rem;
+  background-color: $light-gray;
+  padding: 1rem;
+  border: none;
+  >span {
+    font-size: x-large;
   }
+
   // margin: 5rem 4rem 0;
 }
