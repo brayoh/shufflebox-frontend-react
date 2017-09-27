@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const styles = require('./Content.scss')
+const styles = require('./Content.scss');
 
 class Content extends React.Component {
   constructor(props){

@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import CircularProgress from 'material-ui/CircularProgress';
 // import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // import FlatButton from 'material-ui/FlatButton';
-import {Icon} from 'react-fa';
 import { Button }from 'react-bootstrap';
 
 import * as brownbagActions from '../../../../actions/brownbagActions';
@@ -34,7 +33,6 @@ class UpcomingBrownBag extends React.Component {
 
   nextPresenters() {
     const { presenters }  = this.props;
-    console.log('presenters', presenters)
     if (presenters.length > 0 ) {
         // const brownBag = { id: presenter.id, date: presenter.date, status:'' };
         return (
@@ -59,7 +57,6 @@ class UpcomingBrownBag extends React.Component {
           );
     } else {
       return (
-        // <Icon spin name="spinner" />
         <p>Loading .....</p>
       );
     } 
