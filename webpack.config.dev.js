@@ -44,14 +44,14 @@ export default {
       },
       {
         test: /\.css/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [{
-            loader: 'css-loader'
-          }]
-        })
-        
-      },
+        include: /node_modules/,
+        use: [{
+          loader: 'style-loader'
+        },
+        {
+          loader: 'css-loader'
+        }
+      ]},
       {
         test: /\.scss$/,
         use: [{
@@ -101,15 +101,23 @@ export default {
         test: /(\.scss)$/,
         loaders: ['style-loader', 'css-loader', 'sass-loader']
       },
+      {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'file-loader'
+      },
       // {
-      //   test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      //   loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+      //   test: /(\.css)$/,
+      //   include: /node_modules/,
+      //   loaders: [
+      //       'style',
+      //       'css'
+      //   ]
       // },
-      // {
-      //   test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      //   loader: 'file-loader'
-      // },
-      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
+      // { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader'

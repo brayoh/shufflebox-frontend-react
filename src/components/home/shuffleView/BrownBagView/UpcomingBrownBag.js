@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import {connect} from 'react-redux';
-import CircularProgress from 'material-ui/CircularProgress';
-// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-// import FlatButton from 'material-ui/FlatButton';
 import { Button }from 'react-bootstrap';
-
+import Spinner from 'react-spinkit';
 import * as brownbagActions from '../../../../actions/brownbagActions';
 
 const styles = require('./UpcomingBrownBag.scss');
@@ -33,7 +30,7 @@ class UpcomingBrownBag extends React.Component {
 
   nextPresenters() {
     const { presenters }  = this.props;
-    if (presenters.length > 0 ) {
+    if (presenters.length < 0 ) {
         // const brownBag = { id: presenter.id, date: presenter.date, status:'' };
         return (
           presenters.map((presenter, index) =>
@@ -57,7 +54,11 @@ class UpcomingBrownBag extends React.Component {
           );
     } else {
       return (
-        <p>Loading .....</p>
+        <div>
+          <span>Loading .....</span>
+          <Spinner name="ball-pulse-rise" color="purple" />
+        </div>
+        
       );
     } 
   }
