@@ -37,7 +37,7 @@ class OngoingBrownBag extends React.Component {
   render() {
     return (
       <div className={styles.onlistBrownBag}>
-          <span>WHO'S ON THE LIST</span>
+        <span>WHO'S ON THE LIST</span>
         <ul className={styles.onList}>
           {this.unpresentedUsers()}
         </ul>

@@ -30,7 +30,7 @@ class UpcomingBrownBag extends React.Component {
 
   nextPresenters() {
     const { presenters }  = this.props;
-    if (presenters.length < 0 ) {
+    if (presenters.length > 0 ) {
         // const brownBag = { id: presenter.id, date: presenter.date, status:'' };
         return (
           presenters.map((presenter, index) =>
