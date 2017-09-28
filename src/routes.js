@@ -1,17 +1,21 @@
 import React from "react";
 import { Route, Switch } from 'react-router-dom';
-import App from "./components/App";
-import AuthPage from "./components/auth/AuthPage";
-import HomePage from "./components/home/HomePage";
-import Landing from "./components/welcome/Landing";
+import App from "./App";
+import AuthPage from "./pages/auth/AuthPage";
+import HomePage from "./pages/home/HomePage";
+import shufflePage from './pages/shuffle/ShufflePage';
 
-const Routes = () => ( 
-  <Switch>
-    <Route exact path="/" component={Landing} />
-    <Route path="/auth/login/" component={AuthPage} />
-    <Route path="/home" component={HomePage} />
-    <Route path="/landing" component={Landing} />
+const Routes = () => (
+  <App>
+    <Switch>
+      <Route exact path="/" component={HomePage} />
+      <Route exact path="/about" component={HomePage} />
+      <Route exact path="/faq" component={HomePage} />
+      <Route path="/auth/login/" component={AuthPage} />
+      <Route path="/shuffle" component={shufflePage} />
   </Switch>
+  </App>
+ 
 );
 
 export default  Routes;

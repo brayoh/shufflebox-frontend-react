@@ -2,8 +2,6 @@ import webpack from 'webpack';
 import path from 'path';
 import dotenv from 'dotenv';
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 dotenv.config();
 // process.traceDeprecation = true;
 
@@ -27,7 +25,6 @@ export default {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin('style.css'),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {

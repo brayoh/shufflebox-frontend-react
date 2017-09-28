@@ -1,0 +1,40 @@
+@import '../../styles/base/_variables.scss';
+
+.skippedBrownBag {
+  background: lighten($dark-gray, 25%);
+  border-bottom: 1px solid $dark-gray;
+}
+
+.skippedList {
+  list-style: none;
+  margin-left: 2.3rem;
+  padding: 2rem;
+
+  li  {
+    display: flex;
+    align-items: center;
+    img {
+      margin: 1rem;
+      width: 11%;
+      border-radius: 50%;
+      height: 11%;
+    }
+    div {
+      h5 {
+        display: inline;
+        font-size: 1.5rem;
+        color: darken($light-gray, 60%);
+      }
+      span:nth-child(2) {
+        display: inline;
+        font-weight: 400;
+        padding: 1rem;
+        color: lighten($dark-gray, 1%);
+      }
+      span:nth-child(3) {
+        display: block;
+        color: lighten($dark-gray, 1%);
+      }
+    }
+  }
+}

@@ -8,7 +8,7 @@ import './styles/main.scss';
 
 // Import Provider from redux and configure store
 import {Provider} from 'react-redux';
-import configureStore from './store/configureStore';
+import configureStore from './redux/store/configureStore';
 
 // Set initialState as {} for now
 const store = configureStore({});
