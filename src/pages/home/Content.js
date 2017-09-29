@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const styles = require('./Content.scss');
 
@@ -10,7 +10,7 @@ class Content extends React.Component {
   }
 
   goToHomePage = () => {
-    window.location.href = `${window.location.href}${'shuffle/brownbag'}`;
+    this.props.history.push('/shuffle/brownbag');
   }
 
   render(){
@@ -35,5 +35,9 @@ class Content extends React.Component {
     );
   }
 }
+
+Content.propTypes = {
+  history: PropTypes.object
+};
 
 export default Content;
