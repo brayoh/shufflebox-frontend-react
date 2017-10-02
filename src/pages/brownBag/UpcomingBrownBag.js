@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 import { Button }from 'react-bootstrap';
 import Spinner from 'react-spinkit';
+import moment from 'moment';
 import * as brownbagActions from '../../redux/actions/brownbagActions';
 
 const styles = require('./UpcomingBrownBag.scss');
@@ -31,7 +32,6 @@ class UpcomingBrownBag extends React.Component {
   nextPresenters() {
     const { presenters }  = this.props;
     if (presenters.length > 0 ) {
-        // const brownBag = { id: presenter.id, date: presenter.date, status:'' };
         return (
           presenters.map((presenter, index) =>
             <li key={index}>
@@ -41,7 +41,7 @@ class UpcomingBrownBag extends React.Component {
               alt="user image not found"/>
               <div className="user-info">
                 <span>{`${presenter.user.first_name} ${presenter.user.last_name}`}</span>
-                <span>{presenter.date}</span>
+                <span>{moment(presenter.date).format('D MMM')}</span>
               </div>
               <Button className={styles.confirmButton} bsStyle="primary" onClick={this.handleConfirmBrownbag({ id: presenter.id, date: presenter.date, status:'' })}>
                 Confirm
@@ -54,9 +54,9 @@ class UpcomingBrownBag extends React.Component {
           );
     } else {
       return (
-        <div>
+        <div className={styles.loading}>
           <span>Loading .....</span>
-          <Spinner name="ball-pulse-rise" color="purple" />
+          <Spinner name="ball-clip-rotate-multiple"  color="blue" />
         </div>
         
       );

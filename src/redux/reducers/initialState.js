@@ -5,7 +5,7 @@ export default {
     {
     "id": 666,
     "name": "The Beast",
-    "date": "Fri Jan 20 2017",
+    "date": "2017-01-20",
     "user": {
       "id": 45,
       "first_name": "The",
@@ -22,7 +22,7 @@ export default {
   {
     "id": 333,
     "name": "The Beast",
-    "date": "Fri Feb 20 2017",
+    "date": "2017-02-20",
     "user": {
       "id": 45,
       "first_name": "Half",
