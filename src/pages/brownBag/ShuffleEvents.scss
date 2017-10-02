@@ -1,0 +1,30 @@
+@import '../../styles/base/variables.scss';
+
+.shuffleEvents {
+  border-bottom: 1px solid $dark-gray; 
+  h5 {
+    margin-left: 4rem;
+    color: lighten($dark-gray, 1%);
+    margin: 4rem 4rem 1rem;
+  }
+  h4 {
+    margin-left: 4rem;
+    color: darken($light-gray, 50%);
+    font-weight: 300;
+    font-size: 2.5rem;
+  }
+}
+
+.shuffleButton {
+  background-color: $blue;
+  color: #fff;
+  display: block;
+  margin: 4rem auto;
+  width: 30rem;
+  padding: 0.7rem;
+  
+  >img {
+    width: 10%;
+    margin: 0 0.7rem;
+  }
+}

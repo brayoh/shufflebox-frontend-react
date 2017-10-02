@@ -1,0 +1,12 @@
+@import '../../../styles/base/_variables.scss';
+
+.info {
+  margin: 4rem 7rem;
+  span {
+    color: lighten($dark-blue, 20%);
+  }
+  h5 {
+    font-size: 2rem;
+    color: #fff;
+  }
+}

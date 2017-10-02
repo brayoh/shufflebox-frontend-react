@@ -1,0 +1,35 @@
+@import '../../styles/base/variables.scss';
+
+.vistorsBrownBag {
+  margin-top: 4rem;
+  >span {
+    margin: 0 4rem;
+    padding-top: 6rem;
+    color: darken($light-gray, 55%);
+  }
+}
+
+.visitingList {
+  list-style: none;
+  margin-left: 4rem;
+  li  {
+    display: flex;
+    align-items: center;
+    img {
+      margin: 1rem;
+      width: 11%;
+      border-radius: 50%;
+      height: 11%;
+    }
+    >div {
+      span:nth-child(1) {
+        color: darken($light-gray, 55%);
+      }
+      span:nth-child(2) {
+        display: block;
+        color: darken($light-gray, 30%);
+      }
+    }
+  }
+  
+}

@@ -1,0 +1,24 @@
+@import '../../styles/base/variables.scss';
+
+.onlistBrownBag {
+  margin-top: 2rem;
+  >span {
+    margin: 0 4rem;
+    padding-top: 2rem;
+    color: darken($light-gray, 55%);
+  }
+}
+
+.onList {
+  list-style: none;
+  margin-left: 4rem;
+
+  li >img {
+    margin: 1rem;
+    border-radius: 50%;
+  }
+}
+
+.userInfo {
+  color: darken($light-gray, 50%);
+}
