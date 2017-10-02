@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 import UUID from 'node-uuid';
-import * as actions from '../../redux/actions/confirmModalActions';
+import * as actions from '../../redux/actions/ModalActions';
 import { Button, Glyphicon, Modal } from 'react-bootstrap';
 import modalTypes from '../../enums/modalTypes';
 
@@ -93,7 +93,7 @@ PreviousBrownBag.propTypes = {
 function mapStateToProps(state, ownProps) {
   return {
     previous_candidates_list: state.previousCandidatesReducer,
-    modal: state.confirmModalReducer.modal
+    modal: state.modalReducer.modal
   };
 }
 

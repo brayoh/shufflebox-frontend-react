@@ -27,7 +27,7 @@ class BrownBagContainer extends React.Component {
 }
 
 BrownBagContainer.propTypes = {
-  brownbag: PropTypes.object
+  brownbag: PropTypes.array
 };
 
 function mapStateToProps(state, ownProps) {

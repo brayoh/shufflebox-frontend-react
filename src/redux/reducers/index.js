@@ -6,15 +6,15 @@ import {
   ongoingCandidatesReducer
 } from './brownbagReducer';
 import {
-  confirmModalReducer
-} from './confirmModalReducer';
+  modalReducer
+} from './modalReducer';
 
 const rootReducer = combineReducers({
   brownbagReducer,
   previousCandidatesReducer,
   nextBrownbagReducer,
   ongoingCandidatesReducer,
-  confirmModalReducer
+  modalReducer
 });
 
 export default rootReducer;
