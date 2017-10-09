@@ -1,4 +1,4 @@
-@import '../../styles/base/variables.scss';
+// @import '../../styles/base/variables.scss';
 
 .previousBrownBag {
   border-bottom: 1px solid $dark-gray;
@@ -33,7 +33,7 @@
       color: darken($light-gray, 55%);
       font-weight: 500;
     }
-    
+
   }
 }
 

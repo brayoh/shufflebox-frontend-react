@@ -1,8 +1,8 @@
-@import '../../styles/base/variables.scss';
+// @import '../../styles/base/variables.scss';
 
 .upcomingBrownBag {
   border-bottom: 1px solid $dark-gray;
-  
+
   h5 {
     color: darken($light-gray, 50%);
     margin: 4rem 4rem 1rem;
